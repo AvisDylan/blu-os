@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="da3359e9-1f4a-4508-9a94-082ff3225c67" name="Ninja build" defaultType="TOOL">
+      <configuration id="733941ea-6017-4d22-b6f0-87dc98dc92d3" name="Ninja build">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_Ninja" />
+        </build>
+      </configuration>
+    </target>
+  </component>
+</project>
