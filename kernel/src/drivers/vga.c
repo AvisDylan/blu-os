@@ -4,7 +4,6 @@
 
 #include <stddef.h>
 #include <stdint.h>
-
 #include <drivers/vga.h>
 
 uint8_t vgaEntryColor(enum VGAColor fg, enum VGAColor bg) {
