@@ -19,6 +19,8 @@ set(KERNEL_SOURCES
     src/drivers/vga.c
     src/kernel/kernel.c
     src/kernel/tty/tty.c
+    src/arch/i386/gdt/gdt.c
+    src/arch/i386/gdt/gdtflush.s
 )
 
 add_executable(blu_os.kernel ${KERNEL_SOURCES})
