@@ -1,35 +1,16 @@
 //
-// Created by dylan on 07/07/2026.
+// Created by dylan on 08/07/2026.
 //
 
 #include <stddef.h>
 #include <stdint.h>
-
+#include <kernel/tty/tty.h>
 #include <drivers/vga.h>
-
-#define VGA_MEMORY 0xb8000
 
 static size_t terminalRow;
 static size_t terminalColumn;
 static uint8_t terminalColor;
 static uint16_t* terminalBuffer = (uint16_t*) VGA_MEMORY;
-
-size_t strlen(const char* str) {
-    size_t length = 0;
-
-    while (str[length])
-        length++;
-
-    return length;
-}
-
-uint8_t vgaEntryColor(enum VGAColor fg, enum VGAColor bg) {
-    return fg | bg << 4;
-}
-
-uint16_t vgaEntry(uint8_t uc, uint8_t color) {
-    return (uint16_t) uc | (uint16_t) color << 8;
-}
 
 void terminalInit() {
     terminalRow = 0;
@@ -119,8 +100,4 @@ void terminalWrite(const char* data, size_t size) {
     for (size_t i = 0; i < size; i++) {
         terminalPutChar(data[i]);
     }
-}
-
-void terminalWriteString(const char* data) {
-    terminalWrite(data, strlen(data));
 }

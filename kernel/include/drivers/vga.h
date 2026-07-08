@@ -32,20 +32,6 @@ enum VGAColor {
 
 size_t strlen(const char* str);
 
-void terminalInit();
-
-void terminalSetColor(uint8_t color);
-
-void terminalPutEntryAt(char c, uint8_t color, size_t x, size_t y);
-
-void terminalScroll();
-
-void terminalPutChar(char c);
-
-void terminalWrite(const char* data, size_t size);
-
-void terminalWriteString(const char* data);
-
 uint8_t vgaEntryColor(enum VGAColor fg, enum VGAColor bg);
 
 uint16_t vgaEntry(uint8_t uc, uint8_t color);
