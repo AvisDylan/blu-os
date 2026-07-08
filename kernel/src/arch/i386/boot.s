@@ -20,7 +20,7 @@ stack_top:
 
 .section .text
 .global _start
-.type _start, function 
+.type _start, @function
 
 _start:
     mov esp, offset stack_top

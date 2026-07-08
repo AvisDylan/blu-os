@@ -5,6 +5,7 @@
 #ifndef BLU_OS_STRING_H
 #define BLU_OS_STRING_H
 
+#include <stddef.h>
 #include <sys/cdefs.h>
 
 #ifdef __cplusplus

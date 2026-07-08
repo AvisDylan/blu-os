@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 __attribute__((__noreturn__))
-void abort(void) {
+void abort() {
 #ifdef __is_libk
     printf("kernel panic\n");
     asm volatile("hlt");

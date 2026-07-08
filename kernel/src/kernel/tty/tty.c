@@ -46,7 +46,7 @@ void terminalScroll() {
         }
     }
 
-    size_t lastRowIndex = (VGA_HEIGHT - 1) & VGA_WIDTH;
+    size_t lastRowIndex = (VGA_HEIGHT - 1) * VGA_WIDTH;
 
     for (size_t x = 0; x < VGA_WIDTH; x++) {
         terminalBuffer[lastRowIndex + x] = vgaEntry(' ', terminalColor);

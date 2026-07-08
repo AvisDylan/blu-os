@@ -44,7 +44,7 @@ int printf(const char* restrict format, ...) {
                 return -1;
             }
 
-            if (!printf(format, amount))
+            if (!print(format, amount))
                 return -1;
 
             format += amount;
@@ -96,6 +96,9 @@ int printf(const char* restrict format, ...) {
 
                     return -1;
                 }
+
+                if (!print(format, length))
+                    return -1;
 
                 written += length;
                 format += length;
