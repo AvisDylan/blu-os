@@ -21,7 +21,7 @@ target_compile_definitions(libk PRIVATE __is_libk __is_libc)
 set_target_properties(libk PROPERTIES OUTPUT_NAME k PREFIX lib)
 
 add_library(libc STATIC ${FREESTANDING_SOURCES})
-target_include_directories(libk PUBLIC
+target_include_directories(libc PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_SOURCE_DIR}/kernel/include
 )

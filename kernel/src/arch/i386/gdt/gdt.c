@@ -52,6 +52,7 @@ void initGdt() {
     entry.limit = 0xfffff;
     entry.accesBytes = 0x92;
     entry.flags = 0xc;
+
     encodeGdtEntry(gdt[2], entry);
 
     uint16_t limit = (sizeof(uint8_t) * 3 * 8) - 1;
