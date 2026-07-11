@@ -23,6 +23,9 @@ set(KERNEL_SOURCES
     src/arch/i386/gdt/gdtflush.s
     src/arch/i386/idt/idt.c
     src/arch/i386/idt/idtstubs.s
+    src/arch/i386/io/io.c
+    src/arch/i386/pic/irqstubs.s
+    src/arch/i386/pic/pic.c
 )
 
 add_executable(blu_os.kernel ${KERNEL_SOURCES})

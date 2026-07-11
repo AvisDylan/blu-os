@@ -23,6 +23,8 @@ typedef struct {
 
 extern void* isrStubTable[];
 
+extern void* irqStubTable[];
+
 __attribute__((noreturn))
 void exceptionHandler();
 
