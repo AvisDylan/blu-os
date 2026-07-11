@@ -1,0 +1,33 @@
+# Checklist
+- [x] Boot
+- [x] Add vga
+- [x] Add libc
+- [x] Add global descriptors
+- [-] Add interrupts
+- [ ] Add paging
+- [ ] Add physical memory
+- [ ] Add virtual memory & higher half
+- [ ] Add long mode
+- [ ] Add heap
+- [ ] Add threading
+- [ ] Add scheduler
+- [ ] Add timers
+- [ ] Add multiprocessing
+- [ ] Add elf loader
+- [ ] Add syscalls
+- [ ] Add kernel permissions
+- [ ] Add process priority + affinity
+- [ ] Add ipc
+- [ ] Add signals
+- [ ] Add wait + blocking io
+- [ ] Add pci enumeration
+- [ ] Get drivers keyboard & mouse, timers, pci
+- [ ] Add vfs & file permissions
+- [ ] Add userland
+- [ ] Add a shell
+- [ ] Add network drivers
+- [ ] Add package manager
+- [ ] Port gcc/clang, python, java
+- [ ] Add libc++
+- [ ] Add desktop enviroment
+- [ ] Add apps
