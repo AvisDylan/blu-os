@@ -5,7 +5,8 @@
 #include <arch/i386/idt/idt.h>
 #include <arch/i386/pic/pic.h>
 
-#include "stdio.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 __attribute__((aligned(0x10)))
 static IDTEntry idt[IDT_MAX_DESCRIPTORS];
@@ -13,7 +14,7 @@ static IDTR idtr;
 static uint64_t ticks = 0;
 
 void exceptionHandler() {
-    asm volatile("cli; hlt");
+    abort();
 }
 
 void irqHandler(uint32_t vector, uint32_t errorCode) {
@@ -22,10 +23,7 @@ void irqHandler(uint32_t vector, uint32_t errorCode) {
     switch (irq) {
         case 0:
             //timer
-            ticks++;
-
-            if (ticks % 100 == 0)
-                printf("tick\n");
+            printf("tick\n");
 
             break;
         case 1:

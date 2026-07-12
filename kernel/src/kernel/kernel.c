@@ -1,8 +1,7 @@
 #include <kernel/tty/tty.h>
 #include <stdio.h>
 #include <arch/i386/gdt/gdt.h>
-
-#include "arch/i386/idt/idt.h"
+#include <arch/i386/idt/idt.h>
 
 void kernelMain() {
     terminalInit();
@@ -14,5 +13,7 @@ void kernelMain() {
     initIdt();
     printf("Successfully initialized idt\n");
 
-    printf("Hello, world!");
+    printf("Hello, World!\n");
+
+    for (;;) {}
 }

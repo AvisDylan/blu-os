@@ -29,7 +29,12 @@ IRQ_STUB 47
 
 irq_common:
     pusha
+    mov eax, [esp + 32]
+    mov ebx, [esp + 36]
+    push ebx
+    push eax
     call irqHandler
+    add esp, 8
     popa
     add esp, 8
     iret
