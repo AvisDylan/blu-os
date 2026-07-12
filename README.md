@@ -1,1 +1,3 @@
-License is found at [license](./License.txt)
+# BluOS
+
+Licenced under [GLPv3](./License.txt)
