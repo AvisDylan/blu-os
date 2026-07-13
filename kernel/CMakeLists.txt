@@ -15,17 +15,19 @@ execute_process(
 )
 
 set(KERNEL_SOURCES
-    src/arch/i386/boot.s
-    src/drivers/vga.c
-    src/kernel/kernel.c
-    src/kernel/tty/tty.c
-    src/arch/i386/gdt/gdt.c
-    src/arch/i386/gdt/gdtflush.s
-    src/arch/i386/idt/idt.c
-    src/arch/i386/idt/idtstubs.s
-    src/arch/i386/io/io.c
-    src/arch/i386/pic/irqstubs.s
-    src/arch/i386/pic/pic.c
+        src/arch/i386/boot.s
+        src/drivers/vga.c
+        src/kernel/kernel.c
+        src/kernel/tty/tty.c
+        src/arch/i386/gdt/gdt.c
+        src/arch/i386/gdt/gdtflush.s
+        src/arch/i386/idt/idt.c
+        src/arch/i386/idt/idtstubs.s
+        src/arch/i386/io/io.c
+        src/arch/i386/pic/irqstubs.s
+        src/arch/i386/pic/pic.c
+        src/arch/i386/mmu/paging.c
+        src/arch/i386/mmu/paging.s
 )
 
 add_executable(blu_os.kernel ${KERNEL_SOURCES})

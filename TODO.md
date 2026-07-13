@@ -3,14 +3,18 @@
 - [x] Add vga
 - [x] Add libc
 - [x] Add global descriptors
-- [-] Add interrupts
-- [ ] Add paging
+- [x] Add IDT
+- [x] Remap PIC
+- [x] Add paging
+- [ ] Add paging pae
 - [ ] Add physical memory
 - [ ] Add virtual memory & higher half
 - [ ] Add long mode
 - [ ] Add heap
 - [ ] Add threading
 - [ ] Add scheduler
+- [ ] Add local APIC
+- [ ] Write driver for IOAPIC
 - [ ] Add timers
 - [ ] Add multiprocessing
 - [ ] Add elf loader

@@ -13,7 +13,7 @@ void abort() {
     printf("abort\n");
 #endif
 
-    while (1) {}
+    for (;;){}
 
     __builtin_unreachable();
 }
