@@ -6,9 +6,8 @@
 - [x] Add IDT
 - [x] Remap PIC
 - [x] Add paging
-- [ ] Add paging pae
-- [ ] Add physical memory
-- [ ] Add virtual memory & higher half
+- [x] Add physical memory
+- [x] Add virtual memory & higher half
 - [ ] Add long mode
 - [ ] Add heap
 - [ ] Add threading

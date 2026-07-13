@@ -6,6 +6,10 @@
 .set MAGIC, 0x1badb002
 .set CHECKSUM, -(MAGIC + FLAGS)
 
+.set PAGE_PRESENT, 0x1
+.set PAGE_WRITE, 0x2
+.set PAGE_HUGE_4MB, 0x080
+
 .section .multiboot
 .align 4
 .long MAGIC
@@ -13,9 +17,13 @@
 .long CHECKSUM
 
 .section .bss
+.align 4096
+boot_page_directory:
+    .skip 4096
+
 .align 16
 stack_bottom:
-.skip 16384
+    .skip 16384
 stack_top:
 
 .section .text
@@ -23,7 +31,33 @@ stack_top:
 .type _start, @function
 
 _start:
+    mov eax, (0x00000000 | PAGE_PRESENT | PAGE_WRITE | PAGE_HUGE_4MB)
+    mov [offset boot_page_directory - 0xC0000000], eax
+
+    mov [offset boot_page_directory - 0xC0000000 + (768 * 4)], eax
+
+    mov eax, cr4
+    or eax, 0x00000010
+    mov cr4, eax
+
+    mov eax, (offset boot_page_directory - 0xC0000000)
+    mov cr3, eax
+
+    mov eax, cr0
+    or eax, 0x80000000
+    mov cr0, eax
+
+    lea eax, [higher_half]
+    jmp eax
+
+higher_half:
+    mov dword ptr [boot_page_directory + (0 * 4)], 0
+
+    mov eax, cr3
+    mov cr3, eax
+
     mov esp, offset stack_top
+
     call _init
     call kernelMain
 
