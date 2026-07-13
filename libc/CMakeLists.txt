@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.33)
 
 set(FREESTANDING_SOURCES
-    src/stdlib/abort.c
-    src/string/memmove.c
-    src/string/strlen.c
-    src/string/memcmp.c
-    src/string/memset.c
-    src/string/memcpy.c
-    src/stdio/printf.c
-    src/stdio/putchar.c
-    src/stdio/puts.c
+        src/stdlib/abort.c
+        src/string/memmove.c
+        src/string/strlen.c
+        src/string/memcmp.c
+        src/string/memset.c
+        src/string/memcpy.c
+        src/stdio/printf.c
+        src/stdio/putchar.c
+        src/stdio/puts.c
 )
 
 add_library(libk STATIC ${FREESTANDING_SOURCES})
