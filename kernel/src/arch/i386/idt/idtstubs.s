@@ -55,7 +55,15 @@ ISR_NO_ERR 31
 isr_common:
     pusha
 
+    mov eax, [esp + 32]
+    push eax
+
+    mov eax, [esp + 36]
+    push eax
+
     call exceptionHandler
+
+    add esp, 8
 
     popa
     add esp, 8

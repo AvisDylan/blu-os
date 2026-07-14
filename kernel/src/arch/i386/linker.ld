@@ -1,25 +1,36 @@
 ENTRY(_start)
 
-SECTIONS{
-	. = 1M;
+KERNEL_VMA = 0xC0000000;
+KERNEL_LMA = 0x00100000;
 
-	.text BLOCK(4K) : ALIGN(4K){
-		*(.multiboot)
-		*(.text)
-	}
+SECTIONS
+{
+    . = KERNEL_VMA + KERNEL_LMA;
 
-	.rodata BLOCK(4K) : ALIGN(4K){
-		*(.rodata)
-	}
+    _kernel_start = .;
 
-	.data BLOCK(4K) : ALIGN(4K){
-		*(.data)
-	}
+    .text ALIGN(4K) : AT(ADDR(.text) - KERNEL_VMA)
+    {
+        *(.multiboot)
+        *(.text*)
+    }
 
-	.bss BLOCK(4K) : ALIGN(4K){
-		*(COMMON)
-		*(.bss)
+    .rodata ALIGN(4K) : AT(ADDR(.rodata) - KERNEL_VMA)
+    {
+        *(.rodata*)
+    }
 
-		endKernel = .;
-	}
+    .data ALIGN(4K) : AT(ADDR(.data) - KERNEL_VMA)
+    {
+        *(.data*)
+    }
+
+    .bss ALIGN(4K) : AT(ADDR(.bss) - KERNEL_VMA)
+    {
+        *(COMMON)
+        *(.bss*)
+    }
+
+    _kernel_end = .;
+    endKernel = .;
 }

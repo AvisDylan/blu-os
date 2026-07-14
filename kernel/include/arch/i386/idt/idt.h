@@ -26,7 +26,9 @@ extern void* isrStubTable[];
 extern void* irqStubTable[];
 
 __attribute__((noreturn))
-void exceptionHandler();
+void exceptionHandler(uint32_t vector, uint32_t errorCode);
+
+void irqHandler(uint32_t vector, uint32_t errorCode);
 
 void idtSetDescriptor(uint8_t vector, void* isr, uint8_t flags);
 
