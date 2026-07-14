@@ -26,7 +26,6 @@ set(KERNEL_SOURCES
         src/arch/i386/io/io.c
         src/arch/i386/pic/irqstubs.s
         src/arch/i386/pic/pic.c
-        src/arch/i386/mmu/paging.c
         src/arch/i386/mmu/paging.s
         src/arch/i386/mmu/physicalmemorymanager.c
         src/arch/i386/mmu/virtualmemorymanager.c
