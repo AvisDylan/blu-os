@@ -18,7 +18,16 @@ target_include_directories(libk PUBLIC
         ${CMAKE_SOURCE_DIR}/kernel/include
 )
 target_compile_definitions(libk PRIVATE __is_libk __is_libc)
+target_compile_options(libk PRIVATE
+        -m32
+        -ffreestanding
+        -nostdinc
+        -Wall
+        -Wextra
+        -fno-exceptions
+)
 set_target_properties(libk PROPERTIES OUTPUT_NAME k PREFIX lib)
+
 
 add_library(libc STATIC ${FREESTANDING_SOURCES})
 target_include_directories(libc PUBLIC
@@ -26,4 +35,12 @@ target_include_directories(libc PUBLIC
         ${CMAKE_SOURCE_DIR}/kernel/include
 )
 target_compile_definitions(libc PRIVATE __is_libc)
+target_compile_options(libc PRIVATE
+        -m32
+        -ffreestanding
+        -nostdinc
+        -Wall
+        -Wextra
+        -fno-exceptions
+)
 set_target_properties(libc PROPERTIES OUTPUT_NAME c PREFIX lib)
