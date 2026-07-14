@@ -14,15 +14,6 @@ static IDTR idtr;
 static uint64_t ticks = 0;
 
 void exceptionHandler(uint32_t vector, uint32_t errorCode) {
-    printf("Exception: %x\n", vector);
-    printf("Error: %x\n", errorCode);
-
-    if (vector == 14) {
-        uint32_t cr2;
-        asm volatile("mov %%cr2, %0" : "=r"(cr2));
-
-        printf("CR2: %x\n", cr2);
-    }
     abort();
 }
 
@@ -32,7 +23,7 @@ void irqHandler(uint32_t vector, uint32_t errorCode) {
     switch (irq) {
         case 0:
             //timer
-            printf("tick\n");
+            // printf("tick\n");
 
             break;
         case 1:
