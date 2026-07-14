@@ -20,8 +20,8 @@ void kernelMain() {
     initPhysicalMemoryManager(256);
     printf("Successfully initialized physical memory manager\n");
 
-    initVirtualMemoryManager();
-    printf("Successfully initialized virtual memory manager\n");
+    // initVirtualMemoryManager();
+    // printf("Successfully initialized virtual memory manager\n");
 
     initPaging();
     printf("Successfully initialized paging\n");
