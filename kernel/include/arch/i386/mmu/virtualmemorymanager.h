@@ -11,8 +11,6 @@
 #define PAGE_WRITE 0x2
 #define PAGE_USER 0x4
 
-extern uint32_t pageDirectory[1024] __attribute__((aligned(4096)));
-
 void initVirtualMemoryManager();
 
 void mapPage(uint32_t virtualAddress, uint32_t physicalAddress, uint32_t flags);

@@ -88,6 +88,41 @@ int printf(const char* restrict format, ...) {
                 written += length;
                 break;
             }
+            case 'x': {
+                format++;
+
+                uint32_t value = va_arg(parameters, uint32_t);
+
+                char buffer[16];
+                size_t length = 0;
+
+                if (value == 0)
+                    buffer[length++] = '0';
+                else {
+                    while (value != 0) {
+                        uint32_t digit = value & 0xF;
+                        buffer[length++] = digit < 10 ? ('0' + digit) : ('a' + (digit - 10));
+                        value >>= 4;
+                    }
+                }
+
+                for (size_t i = 0; i < length / 2; i++) {
+                    char tmp = buffer[i];
+                    buffer[i] = buffer[length - 1 - i];
+                    buffer[length - 1 - i] = tmp;
+                }
+
+                if (maxRem < length) {
+
+                    return -1;
+                }
+
+                if (!print(buffer, length))
+                    return -1;
+
+                written += length;
+                break;
+            }
             default: {
                 format = formatBegunAt;
                 size_t length = strlen(format);

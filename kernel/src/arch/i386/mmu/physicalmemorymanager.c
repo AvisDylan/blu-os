@@ -3,6 +3,7 @@
 //
 
 #include <arch/i386/mmu/physicalmemorymanager.h>
+#include <stdio.h>
 
 static uint8_t* frameMap;
 static physical_addr_t startFrame;
@@ -24,8 +25,7 @@ static physical_addr_t kallocFrameInt() {
 }
 
 void initPhysicalMemoryManager(size_t memSizeInMb) {
-    uint32_t kernelEndPhysical = (uint32_t) &endKernel;
-    startFrame = (kernelEndPhysical + (PAGE_SIZE - 1)) & ~(PAGE_SIZE - 1);
+    startFrame = (physical_addr_t) (((uintptr_t) &endKernel - KERNEL_VMA + (PAGE_SIZE - 1)) & ~(PAGE_SIZE - 1));
 
     uint32_t maxPages = (memSizeInMb * 1024 * 1024) / PAGE_SIZE;
 
@@ -34,7 +34,7 @@ void initPhysicalMemoryManager(size_t memSizeInMb) {
 
     totalPages = maxPages;
 
-    frameMap = (uint8_t*) startFrame;
+    frameMap = (uint8_t*) ((uintptr_t) startFrame + KERNEL_VMA);
 
     uint32_t frameMapPages = (totalPages + (PAGE_SIZE - 1)) / PAGE_SIZE;
 

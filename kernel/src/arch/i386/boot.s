@@ -5,6 +5,9 @@
 .set FLAGS, ALIGN | MEMINFO
 .set MAGIC, 0x1badb002
 .set CHECKSUM, -(MAGIC + FLAGS)
+.set PAGE_PRESENT, 0x1
+.set PAGE_WRITE, 0x2
+.set PAGE_HUGE_4MB, 0x080
 
 .section .multiboot
 .align 4
@@ -13,22 +16,58 @@
 .long CHECKSUM
 
 .section .bss
+.align 4096
+boot_page_directory:
+	.skip 4096
 .align 16
 stack_bottom:
-.skip 16384
+	.skip 16384
 stack_top:
 
 .section .text
 .global _start
 .type _start, @function
-
 _start:
+    lea edi, [boot_page_directory]
+    sub edi, 0xC0000000
+
+	mov ebx, edi
+
+    xor eax, eax
+    mov ecx, 1024
+    rep stosd
+
+    mov eax, PAGE_PRESENT | PAGE_WRITE | PAGE_HUGE_4MB
+
+    mov [edi], eax
+    mov [edi + 768 * 4], eax
+
+    mov cr3, edi
+
+    mov eax, cr4
+    or eax, 0x10
+    mov cr4, eax
+
+    mov eax, cr0
+    or eax, 0x80000000
+    mov cr0, eax
+
+    lea eax, [higher_half]
+    jmp eax
+
+higher_half:
+    mov dword ptr [boot_page_directory], 0
+
+    mov eax, cr3
+    mov cr3, eax
+
     mov esp, offset stack_top
+
     call _init
     call kernelMain
 
-    cli
-1:  hlt
+1:  cli
+    hlt
     jmp 1b
 
 .size _start, . - _start
