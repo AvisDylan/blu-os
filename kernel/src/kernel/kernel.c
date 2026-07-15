@@ -1,10 +1,10 @@
 #include <kernel/tty/tty.h>
 #include <stdio.h>
-#include <arch/i386/gdt/gdt.h>
-#include <arch/i386/idt/idt.h>
-#include <arch/i386/mmu/paging.h>
-#include <arch/i386/mmu/physicalmemorymanager.h>
-#include <arch/i386/mmu/virtualmemorymanager.h>
+#include <arch/x86/i386/gdt/gdt.h>
+#include <arch/x86/i386/idt/idt.h>
+#include <arch/x86/i386/mmu/paging.h>
+#include <arch/x86/i386/mmu/physicalmemorymanager.h>
+#include <arch/x86/i386/mmu/virtualmemorymanager.h>
 
 void kernelMain() {
     terminalInit();

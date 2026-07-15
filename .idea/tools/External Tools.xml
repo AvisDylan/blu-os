@@ -3,7 +3,7 @@
     <exec>
       <option name="COMMAND" value="/usr/bin/ninja-build" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/CLionProjects/blu-os/cmake-build-debug" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/CLionProjects/blu-os/build/i386-release" />
     </exec>
   </tool>
 </toolSet>

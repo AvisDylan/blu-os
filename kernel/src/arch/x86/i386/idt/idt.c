@@ -2,8 +2,8 @@
 // Created by dylan on 10/07/2026.
 //
 
-#include <arch/i386/idt/idt.h>
-#include <arch/i386/pic/pic.h>
+#include <arch/x86/i386/idt/idt.h>
+#include <arch/x86/i386/pic/pic.h>
 
 #include <stdio.h>
 #include <stdlib.h>

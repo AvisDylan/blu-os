@@ -24,44 +24,46 @@ set(KERNEL_I386_SOURCES
 set(KERNEL_AMD64_SOURCES
 )
 
-add_library(crti_i386 OBJECT src/arch/x86/i386/crti.s)
-add_library(crtn_i386 OBJECT src/arch/x86/i386/crtn.s)
-set_target_properties(crti_i386 PROPERTIES LANGUAGE ASM)
-set_target_properties(crtn_i386 PROPERTIES LANGUAGE ASM)
+if (ARCH_BITS EQUAL 64)
+    add_library(crti_amd64 OBJECT src/arch/x86/i386/crti.s)
+    add_library(crtn_amd64 OBJECT src/arch/x86/i386/crtn.s)
+    set_target_properties(crti_amd64 PROPERTIES LANGUAGE ASM)
+    set_target_properties(crtn_amd64 PROPERTIES LANGUAGE ASM)
 
-add_library(crti_amd64 OBJECT src/arch/x86/i386/crti.s)
-add_library(crtn_amd64 OBJECT src/arch/x86/i386/crtn.s)
-set_target_properties(crti_amd64 PROPERTIES LANGUAGE ASM)
-set_target_properties(crtn_amd64 PROPERTIES LANGUAGE ASM)
+    add_executable(blu_os.kernel64 ${KERNEL_COMMON_SOURCES} ${KERNEL_AMD64_SOURCES})
+    add_dependencies(blu_os.kernel64 crti_amd64 crtn_amd64)
 
-add_executable(blu_os.kernel32 ${KERNEL_COMMON_SOURCES} ${KERNEL_I386_SOURCES})
-add_dependencies(blu_os.kernel32 crti_i386 crtn_i386)
+    target_include_directories(blu_os.kernel64 PRIVATE
+            ${CMAKE_CURRENT_SOURCE_DIR}/include
+            ${CMAKE_SOURCE_DIR}/libc/include
+    )
 
-target_include_directories(blu_os.kernel32 PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_SOURCE_DIR}/libc/include
-)
+    target_link_options(blu_os.kernel64 PRIVATE
+            -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/amd64/linker.ld
+            $<TARGET_OBJECTS:crti_amd64>
+            $<TARGET_OBJECTS:crtn_amd64>
+    )
 
-target_link_options(blu_os.kernel32 PRIVATE
-        -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/i386/linker.ld
-        $<TARGET_OBJECTS:crti_i386>
-        $<TARGET_OBJECTS:crtn_i386>
-)
+    target_link_libraries(blu_os.kernel64 PRIVATE libk gcc)
+else ()
+    add_library(crti_i386 OBJECT src/arch/x86/i386/crti.s)
+    add_library(crtn_i386 OBJECT src/arch/x86/i386/crtn.s)
+    set_target_properties(crti_i386 PROPERTIES LANGUAGE ASM)
+    set_target_properties(crtn_i386 PROPERTIES LANGUAGE ASM)
 
-target_link_libraries(blu_os.kernel32 PRIVATE libk gcc)
+    add_executable(blu_os.kernel32 ${KERNEL_COMMON_SOURCES} ${KERNEL_I386_SOURCES})
+    add_dependencies(blu_os.kernel32 crti_i386 crtn_i386)
 
-add_executable(blu_os.kernel64 ${KERNEL_COMMON_SOURCES} ${KERNEL_AMD64_SOURCES})
-add_dependencies(blu_os.kernel64 crti_amd64 crtn_amd64)
+    target_include_directories(blu_os.kernel32 PRIVATE
+            ${CMAKE_CURRENT_SOURCE_DIR}/include
+            ${CMAKE_SOURCE_DIR}/libc/include
+    )
 
-target_include_directories(blu_os.kernel64 PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_SOURCE_DIR}/libc/include
-)
+    target_link_options(blu_os.kernel32 PRIVATE
+            -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/i386/linker.ld
+            $<TARGET_OBJECTS:crti_i386>
+            $<TARGET_OBJECTS:crtn_i386>
+    )
 
-target_link_options(blu_os.kernel64 PRIVATE
-        -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/amd64/linker.ld
-        $<TARGET_OBJECTS:crti_amd64>
-        $<TARGET_OBJECTS:crtn_amd64>
-)
-
-target_link_libraries(blu_os.kernel64 PRIVATE libk gcc)
+    target_link_libraries(blu_os.kernel32 PRIVATE libk gcc)
+endif ()

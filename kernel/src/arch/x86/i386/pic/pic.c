@@ -2,8 +2,8 @@
 // Created by dylan on 11/07/2026.
 //
 
-#include <arch/i386/pic/pic.h>
-#include <arch/i386/io/io.h>
+#include <arch/x86/i386/pic/pic.h>
+#include <arch/x86/i386/io/io.h>
 
 void picSendEoi(uint8_t irq) {
     if (irq >= 8)

@@ -2,7 +2,7 @@
 // Created by dylan on 14/07/2026.
 //
 
-#include <arch/i386/mmu/physicalmemorymanager.h>
+#include <arch/x86/i386/mmu/physicalmemorymanager.h>
 #include <stdio.h>
 
 static uint8_t* frameMap;

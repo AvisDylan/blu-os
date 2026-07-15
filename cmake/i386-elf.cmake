@@ -1,15 +1,11 @@
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR i386)
 
-set(TOOLCHAIN_PREFIX i386-elf)
-set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
-set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}-g++)
-set(CMAKE_ASM_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
-set(CMAKE_AR ${TOOLCHAIN_PREFIX}-ar)
-set(CMAKE_RANLIB ${TOOLCHAIN_PREFIX}-ranlib)
-set(CMAKE_LINKER ${TOOLCHAIN_PREFIX}-ld)
-set(CMAKE_OBJCOPY ${TOOLCHAIN_PREFIX}-objcopy)
-set(CMAKE_OBJDUMP ${TOOLCHAIN_PREFIX}-objdump)
+set(CMAKE_C_COMPILER gcc)
+set(CMAKE_CXX_COMPILER g++)
+set(CMAKE_ASM_COMPILER gcc)
+set(CMAKE_AR ar)
+set(CMAKE_RANLIB ranlib)
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
@@ -22,6 +18,7 @@ set(ARCH_FLAGS -m32)
 set(CMAKE_C_FLAGS_INIT "${ARCH_FLAGS} -ffreestanding -nostdinc -Wall -Wextra -fno-exceptions")
 set(CMAKE_CXX_FLAGS_INIT "${ARCH_FLAGS} -ffreestanding -nostdinc -Wall -Wextra -fno-exceptions -fno-rtti")
 set(CMAKE_ASM_FLAGS_INIT "${ARCH_FLAGS} -x assembler-with-cpp")
+set(CMAKE_ASM_SOURCE_FILE_EXTENSIONS s)
 
 set(CMAKE_EXE_LINKER_FLAGS_INIT "-ffreestanding -nostdlib -Wl,--as-needed")
 

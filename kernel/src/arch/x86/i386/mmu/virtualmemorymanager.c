@@ -2,9 +2,9 @@
 // Created by dylan on 14/07/2026.
 //
 
-#include <arch/i386/mmu/physicalmemorymanager.h>
-#include <arch/i386/mmu/virtualmemorymanager.h>
-#include <arch/i386/mmu/paging.h>
+#include <arch/x86/i386/mmu/physicalmemorymanager.h>
+#include <arch/x86/i386/mmu/virtualmemorymanager.h>
+#include <arch/x86/i386/mmu/paging.h>
 
 #include "stdio.h"
 

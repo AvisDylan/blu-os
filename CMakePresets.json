@@ -13,7 +13,7 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/i386",
       "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/i386-toolchain.cmake",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/i386-elf.cmake",
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       },
@@ -28,7 +28,7 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/x86_64",
       "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/x86_64-toolchain.cmake",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/amd64-elf.cmake",
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       },
