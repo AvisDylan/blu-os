@@ -1,0 +1,24 @@
+\doxysection{virtualmemorymanager.\+h}
+\hypertarget{virtualmemorymanager_8h_source}{}\label{virtualmemorymanager_8h_source}\index{kernel/include/arch/x86/i386/mmu/virtualmemorymanager.h@{kernel/include/arch/x86/i386/mmu/virtualmemorymanager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ dylan\ on\ 14/07/2026.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_VIRTUALMEMORYMANAGER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BLU\_OS\_VIRTUALMEMORYMANAGER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PAGE\_PRESENT\ 0x1}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ PAGE\_WRITE\ 0x2}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ PAGE\_USER\ 0x4}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ initVirtualMemoryManager();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ mapPage(uint32\_t\ virtualAddress,\ uint32\_t\ physicalAddress,\ uint32\_t\ flags);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLU\_OS\_VIRTUALMEMORYMANAGER\_H}}
+
+\end{DoxyCode}

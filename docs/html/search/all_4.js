@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['how_20to_20build_0',['How to build',['../index.html#autotoc_md7',1,'']]]
+  ['gdt_0',['GDT',['../structGDT.html',1,'']]],
+  ['goals_1',['Goals',['../index.html#autotoc_md3',1,'']]]
 ];

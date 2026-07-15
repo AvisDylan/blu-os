@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['to_20build_0',['How to build',['../index.html#autotoc_md7',1,'']]]
+  ['stdarg_2eh_0',['stdarg.h',['../stdarg_8h.html',1,'']]],
+  ['stdbool_2eh_1',['stdbool.h',['../stdbool_8h.html',1,'']]],
+  ['stddef_2eh_2',['stddef.h',['../stddef_8h.html',1,'']]],
+  ['stdint_2eh_3',['stdint.h',['../stdint_8h.html',1,'']]],
+  ['structure_4',['Code structure',['../index.html#autotoc_md5',1,'']]],
+  ['style_5',['Code style',['../index.html#autotoc_md4',1,'']]]
 ];

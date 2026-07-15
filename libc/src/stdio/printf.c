@@ -2,12 +2,12 @@
 // Created by dylan on 08/07/2026.
 //
 
-#include "limits.h"
-#include "stdarg.h"
-#include "stddef.h"
-
-#include "stdio.h"
-#include "string.h"
+#include <limits.h>
+#include <stdarg.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdbool.h>
 
 static bool print(const char* data, size_t length) {
     const unsigned char* bytes = (const unsigned char*) data;

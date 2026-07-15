@@ -1,0 +1,51 @@
+\doxysection{stddef.\+h}
+\hypertarget{stddef_8h_source}{}\label{stddef_8h_source}\index{libc/include/stddef.h@{libc/include/stddef.h}}
+\doxymbox{\hyperlink{stddef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ dylan\ on\ 13/07/2026.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_STDDEF\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BLU\_OS\_STDDEF\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifdef\ \_\_x86\_64\_\_}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ uint64\_t\ size\_t;}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ SIZE\_MAX\ UINT64\_MAX}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ uint32\_t\ size\_t;}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SIZE\_MAX\ UINT32\_MAX}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \_\_x86\_64\_\_}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ ptrdiff\_t;}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ PTRDIFF\_MIN\ (-\/9223372036854775807L\ -\/\ 1)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ PTRDIFF\_MAX\ 9223372036854775807L}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ ptrdiff\_t;}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ PTRDIFF\_MIN\ (-\/2147483648)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ PTRDIFF\_MAX\ 2147483647}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ wchar\_t;}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ WCHAR\_MIN\ (-\/2147483648)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ WCHAR\_MAX\ 2147483647}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ NULL\ ((void*)\ 0)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLU\_OS\_STDDEF\_H}}
+
+\end{DoxyCode}

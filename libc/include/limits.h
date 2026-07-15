@@ -2,26 +2,19 @@
 // Created by MrurBo on 14/07/2026.
 //
 
-#ifndef BLU_OS_STDDEF_H
-#define BLU_OS_STDDEF_H
+#ifndef BLU_OS_LIMITS_H
+#define BLU_OS_LIMITS_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
- * @file stddef.h
- * @brief Common definitions for C programs
- *
- * Provides fundamental types and macros required by C including NULL, size_t, ptrdiff_t, wchar_t and their limits.
+ * @file limits.h
+ * @brief Implementation-defined limit constants for freestanding environment
  */
 
-#pragma once
 #define _INC_LIMITS
-
-#pragma warning(push)
-#pragma warning(disable: _VCRUNTIME_DISABLED_WARNINGS)
-
 #define CHAR_BIT      8
 #define SCHAR_MIN   (-128)
 #define SCHAR_MAX     127
@@ -83,4 +76,4 @@ extern "C" {
 }
 #endif
 
-#endif //BLU_OS_STDDEF_H
+#endif //BLU_OS_LIMITS_H

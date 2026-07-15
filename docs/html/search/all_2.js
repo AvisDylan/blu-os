@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['description_0',['Description',['../index.html#autotoc_md2',1,'']]],
-  ['documentation_1',['Documentation',['../index.html#autotoc_md6',1,'']]]
+  ['code_20structure_0',['Code structure',['../index.html#autotoc_md5',1,'']]],
+  ['code_20style_1',['Code style',['../index.html#autotoc_md4',1,'']]]
 ];

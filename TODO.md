@@ -1,7 +1,7 @@
 # Checklist
 - [x] Boot
 - [x] Add vga
-- [x] Add libc
+- [-] Add libc [TODO](./libc/TODO.md)
 - [x] Add global descriptors
 - [x] Add IDT
 - [x] Remap PIC

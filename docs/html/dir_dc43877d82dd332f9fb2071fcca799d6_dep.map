@@ -1,0 +1,10 @@
+<map id="kernel" name="kernel">
+<area shape="rect" id="node2" href="dir_009f605b833ac4622acd6c3c0c26c0f0.html" title="include" alt="" coords="108,27,170,53"/>
+<area shape="rect" id="node4" href="dir_fc1eb218ab426e5adb60367f98438da0.html" title="libc" alt="" coords="155,101,197,128"/>
+<area shape="poly" id="edge1" href="dir_000010_000017.html" alt="" coords="147,52,165,88,160,87,144,56"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000010_000017.html" title="12" alt="" coords="162,73,176,89"/>
+<area shape="rect" id="node3" href="dir_3dd30a497388ee684638f120a124721c.html" title="src" alt="" coords="194,27,233,53"/>
+<area shape="poly" id="edge2" href="dir_000022_000017.html" alt="" coords="209,52,191,90,187,86,205,55"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000022_000017.html" title="6" alt="" coords="195,81,202,97"/>
+<area shape="rect" id="clust1" href="dir_dc43877d82dd332f9fb2071fcca799d6.html" alt="" coords="16,16,244,64"/>
+</map>

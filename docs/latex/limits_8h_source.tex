@@ -1,0 +1,81 @@
+\doxysection{limits.\+h}
+\hypertarget{limits_8h_source}{}\label{limits_8h_source}\index{libc/include/limits.h@{libc/include/limits.h}}
+\doxymbox{\hyperlink{limits_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ MrurBo\ on\ 14/07/2026.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_LIMITS\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BLU\_OS\_LIMITS\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ \_INC\_LIMITS}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ CHAR\_BIT\ \ \ \ \ \ 8}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ SCHAR\_MIN\ \ \ (-\/128)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ SCHAR\_MAX\ \ \ \ \ 127}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ UCHAR\_MAX\ \ \ \ \ 0xff}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifndef\ \_CHAR\_UNSIGNED}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \#define\ CHAR\_MIN\ \ \ \ SCHAR\_MIN}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \#define\ CHAR\_MAX\ \ \ \ SCHAR\_MAX}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \#define\ CHAR\_MIN\ \ \ \ 0}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \#define\ CHAR\_MAX\ \ \ \ UCHAR\_MAX}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MB\_LEN\_MAX\ \ \ \ 5}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ SHRT\_MIN\ \ \ \ (-\/32768)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ SHRT\_MAX\ \ \ \ \ \ 32767}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ USHRT\_MAX\ \ \ \ \ 0xffff}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ INT\_MIN\ \ \ \ \ (-\/2147483647\ -\/\ 1)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ INT\_MAX\ \ \ \ \ \ \ 2147483647}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ UINT\_MAX\ \ \ \ \ \ 0xffffffff}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LONG\_MIN\ \ \ \ (-\/2147483647L\ -\/\ 1)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ LONG\_MAX\ \ \ \ \ \ 2147483647L}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ ULONG\_MAX\ \ \ \ \ 0xffffffffUL}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ LLONG\_MAX\ \ \ \ \ 9223372036854775807i64}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ LLONG\_MIN\ \ \ (-\/9223372036854775807i64\ -\/\ 1)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ULLONG\_MAX\ \ \ \ 0xffffffffffffffffui64}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \_I8\_MIN\ \ \ \ \ (-\/127i8\ -\/\ 1)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ \_I8\_MAX\ \ \ \ \ \ \ 127i8}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_UI8\_MAX\ \ \ \ \ \ 0xffui8}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ \_I16\_MIN\ \ \ \ (-\/32767i16\ -\/\ 1)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \_I16\_MAX\ \ \ \ \ \ 32767i16}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ \_UI16\_MAX\ \ \ \ \ 0xffffui16}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ \_I32\_MIN\ \ \ \ (-\/2147483647i32\ -\/\ 1)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ \_I32\_MAX\ \ \ \ \ \ 2147483647i32}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ \_UI32\_MAX\ \ \ \ \ 0xffffffffui32}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ \_I64\_MIN\ \ \ \ (-\/9223372036854775807i64\ -\/\ 1)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ \_I64\_MAX\ \ \ \ \ \ 9223372036854775807i64}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ \_UI64\_MAX\ \ \ \ \ 0xffffffffffffffffui64}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ \#ifndef\ SIZE\_MAX}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ \ \ \ \ \#ifdef\ }}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \#define\ SIZE\_MAX\ 0xffffffffffffffffui64}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ \ \ \ \ \#else}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \#define\ SIZE\_MAX\ 0xffffffffui32}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ \ \ \ \ \#endif}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ \#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#if\ \_\_STDC\_WANT\_SECURE\_LIB\_\_}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ RSIZE\_MAX}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ RSIZE\_MAX\ (SIZE\_MAX\ >>\ 1)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLU\_OS\_LIMITS\_H}}
+
+\end{DoxyCode}
