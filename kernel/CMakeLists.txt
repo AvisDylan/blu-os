@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.33)
 project(blu_os_kernel)
 
+enable_language(ASM)
+
 set(KERNEL_COMMON_SOURCES
         src/drivers/vga.c
         src/kernel/kernel.c
@@ -22,11 +24,14 @@ set(KERNEL_I386_SOURCES
 )
 
 set(KERNEL_AMD64_SOURCES
+        src/arch/x86/amd64/boot.s
 )
 
 if (ARCH_BITS EQUAL 64)
-    add_library(crti_amd64 OBJECT src/arch/x86/i386/crti.s)
-    add_library(crtn_amd64 OBJECT src/arch/x86/i386/crtn.s)
+    add_compile_options(-mcmodel=kernel -mno-red-zone)
+
+    add_library(crti_amd64 OBJECT src/arch/x86/amd64/crti.s)
+    add_library(crtn_amd64 OBJECT src/arch/x86/amd64/crtn.s)
     set_target_properties(crti_amd64 PROPERTIES LANGUAGE ASM)
     set_target_properties(crtn_amd64 PROPERTIES LANGUAGE ASM)
 
