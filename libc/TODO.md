@@ -12,7 +12,7 @@
 - [ ] endian.h
 - [ ] fcntl.h
 - [ ] fenv.h
-- [ ] float.h
+- [-] float.h
 - [ ] fmtmsg.h
 - [ ] fnmatch.h
 - [ ] ftw.h
@@ -23,9 +23,9 @@
 - [ ] iso646.h
 - [ ] langinfo.h
 - [ ] libgen.h
-- [ ] limits.h
+- [-] limits.h
 - [ ] locale.h
-- [ ] math.h
+- [-] math.h
 - [ ] monetary.h
 - [ ] mqueue.h
 - [ ] ndbm.h
@@ -48,9 +48,9 @@
 - [x] stdbool.h
 - [x] stddef.h
 - [x] stdint.h
-- [ ] stdio.h
-- [ ] stdlib.h
-- [ ] string.h
+- [-] stdio.h
+- [-] stdlib.h
+- [-] string.h
 - [ ] strings.h
 - [ ] stropts.h
 - [ ] sys/ipc.h
