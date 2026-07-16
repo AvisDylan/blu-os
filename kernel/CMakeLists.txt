@@ -28,7 +28,7 @@ set(KERNEL_AMD64_SOURCES
 )
 
 if (ARCH_BITS EQUAL 64)
-    add_compile_options(-mcmodel=kernel -mno-red-zone)
+    add_compile_options(-mcmodel=large -mno-red-zone -mno-mmx -mno-sse -mno-sse2)
 
     add_library(crti_amd64 OBJECT src/arch/x86/amd64/crti.s)
     add_library(crtn_amd64 OBJECT src/arch/x86/amd64/crtn.s)
