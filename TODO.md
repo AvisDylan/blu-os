@@ -8,7 +8,10 @@
 - [x] Add paging
 - [x] Add physical memory
 - [x] Add virtual memory & higher half
-- [ ] Add long mode
+- [x] Add long mode
+- [ ] Add KAH
+- [ ] Add long mode global descriptors
+- [ ] Add long mode IDT
 - [ ] Add heap
 - [ ] Add threading
 - [ ] Add scheduler

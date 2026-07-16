@@ -7,8 +7,8 @@
 #include <arch/x86/i386/mmu/virtualmemorymanager.h>*/
 
 void kernelMain() {
-    // terminalInit();
-    // printf("Successfully initialized terminal\n");
+    terminalInit();
+    printf("Successfully initialized terminal\n");
 
     /*
     initGdt();
@@ -23,8 +23,8 @@ void kernelMain() {
 
     initVirtualMemoryManager();
     printf("Successfully initialized virtual memory manager\n");
-
-    printf("Hello, World!\n");*/
+    */
+    printf("Hello, World!\n");
 
     for (;;) {}
 }

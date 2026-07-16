@@ -4,10 +4,15 @@
 
 #ifndef BLU_OS_TTY_H
 #define BLU_OS_TTY_H
+
 #include <stddef.h>
 #include <stdint.h>
 
-#define VGA_MEMORY 0xb8000
+#ifdef __x86_64__
+    #define VGA_MEMORY 0xFFFFFFFF800B8000
+#elif
+    #define VGA_MEMORY 0xb8000
+#endif
 
 void terminalInit();
 
