@@ -27,6 +27,8 @@ set(KERNEL_I386_SOURCES
 set(KERNEL_AMD64_SOURCES
         src/arch/x86/amd64/boot/boot.s
         src/arch/x86/amd64/kal.c
+        src/arch/x86/amd64/gdt/gdtflush.s
+        src/arch/x86/amd64/gdt/gdt.c
 )
 
 if (ARCH_BITS EQUAL 64)

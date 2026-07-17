@@ -11,6 +11,7 @@ set(FREESTANDING_SOURCES
         src/stdio/printf.c
         src/stdio/putchar.c
         src/stdio/puts.c
+        src/stdio/vprintf.c
 )
 
 add_library(libk STATIC ${FREESTANDING_SOURCES})

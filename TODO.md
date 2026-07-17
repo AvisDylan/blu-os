@@ -10,7 +10,7 @@
 - [x] Add virtual memory & higher half
 - [x] Add long mode
 - [x] Add kernel abstraction layer
-- [ ] Add long mode global descriptors
+- [x] Add long mode global descriptors
 - [ ] Add long mode IDT
 - [ ] Split libk and libc
 - [ ] Add heap

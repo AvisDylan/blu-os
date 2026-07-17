@@ -3,9 +3,10 @@
 //
 
 #include <stddef.h>
+#include <arch/x86/amd64/gdt/gdt.h>
 
 void kalInitGdt(void) {
-
+    initGdt();
 }
 
 void kalInitIdt(void) {
