@@ -13,4 +13,13 @@ CMakeUserPresets.json
 cmake-build-debug
 cmake-build-release
 .idea
+.vscode
 vcpkg_installed
+build
+*.iso
+*.elf
+*.kernel
+*.a
+*.so
+*.kernel64
+*.kernel32

@@ -1,0 +1,7 @@
+<map id="kernel/src/arch/x86/i386/gdt" name="kernel/src/arch/x86/i386/gdt">
+<area shape="rect" id="node1" href="dir_a42faa698d021a1727cb0e3a8effd61c.html" title="gdt" alt="" coords="27,53,66,80"/>
+<area shape="rect" id="node2" href="dir_fc1eb218ab426e5adb60367f98438da0.html" title="libc" alt="" coords="26,128,67,155"/>
+<area shape="poly" id="edge1" href="dir_000005_000017.html" alt="" coords="48,78,49,113,44,112,45,83"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000005_000017.html" title="1" alt="" coords="52,101,59,117"/>
+<area shape="rect" id="clust1" href="dir_360c9ccbf10f5b2ce74bca48de889854.html" title="i386" alt="" coords="16,16,77,91"/>
+</map>

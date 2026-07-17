@@ -1,0 +1,14 @@
+<map id="kernel/include" name="kernel/include">
+<area shape="rect" id="node2" href="dir_b938bbc65f66dd090a6a00a71c65b7d8.html" title="arch" alt="" coords="124,64,170,91"/>
+<area shape="rect" id="node5" href="dir_fc1eb218ab426e5adb60367f98438da0.html" title="libc" alt="" coords="203,139,245,165"/>
+<area shape="poly" id="edge1" href="dir_000000_000017.html" alt="" coords="160,89,183,110,202,129,196,128,180,114,159,94"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000000_000017.html" title="8" alt="" coords="199,112,206,128"/>
+<area shape="rect" id="node3" href="dir_c8660ea649945092ffc9f7148865f24e.html" title="drivers" alt="" coords="194,64,254,91"/>
+<area shape="poly" id="edge2" href="dir_000002_000017.html" alt="" coords="226,89,226,124,222,122,222,93"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000002_000017.html" title="2" alt="" coords="229,112,236,128"/>
+<area shape="rect" id="node4" href="dir_34c6a35bb0168646a0380914d53769bd.html" title="kernel" alt="" coords="278,64,335,91"/>
+<area shape="poly" id="edge3" href="dir_000015_000017.html" alt="" coords="295,90,251,131,248,126,290,92"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000015_000017.html" title="2" alt="" coords="254,125,261,141"/>
+<area shape="rect" id="clust2" href="dir_009f605b833ac4622acd6c3c0c26c0f0.html" alt="" coords="27,53,345,101"/>
+<area shape="rect" id="clust1" href="dir_dc43877d82dd332f9fb2071fcca799d6.html" title="kernel" alt="" coords="16,16,356,112"/>
+</map>

@@ -1,0 +1,28 @@
+<map id="libc/include/stdint.h" name="libc/include/stdint.h">
+<area shape="rect" id="Node000001" title="Fixed&#45;width integer types." alt="" coords="625,5,758,32"/>
+<area shape="rect" id="Node000002" href="$gdt_8h_source.html" title=" " alt="" coords="5,80,136,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="607,26,400,47,274,63,148,83,137,85,135,80,147,77,273,57,399,42,612,24"/>
+<area shape="rect" id="Node000003" href="$idt_8h_source.html" title=" " alt="" coords="160,80,290,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="607,31,466,54,303,83,292,85,290,80,302,77,465,48,612,30"/>
+<area shape="rect" id="Node000004" href="$io_8h_source.html" title=" " alt="" coords="315,80,445,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="625,37,458,83,446,86,445,80,457,77,630,36"/>
+<area shape="rect" id="Node000005" href="$paging_8h_source.html" title=" " alt="" coords="469,80,629,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="659,39,587,82,585,77,654,41"/>
+<area shape="rect" id="Node000006" href="$physicalmemorymanager_8h_source.html" title=" " alt="" coords="354,171,622,213"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="686,45,670,87,658,107,643,125,605,153,562,173,560,167,602,148,639,121,654,104,666,84,682,49"/>
+<area shape="rect" id="Node000007" href="$virtualmemorymanager_8h_source.html" title=" " alt="" coords="967,80,1222,123"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="770,33,993,79,988,80,770,38"/>
+<area shape="rect" id="Node000008" href="$pic_8h_source.html" title=" " alt="" coords="1245,80,1376,123"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="774,23,983,42,1109,57,1234,77,1247,82,1242,82,1233,83,1108,63,983,47,774,28"/>
+<area shape="rect" id="Node000009" href="$vga_8h_source.html" title=" " alt="" coords="645,171,789,213"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="698,45,716,172,712,169,694,49"/>
+<area shape="rect" id="Node000010" href="$tty_8h_source.html" title=" " alt="" coords="971,171,1111,213"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="774,32,840,50,906,78,933,97,958,121,1017,171,1012,169,954,125,930,102,904,82,839,55,774,37"/>
+<area shape="rect" id="Node000011" href="$stddef_8h.html" title="Common definitions for C programs." alt="" coords="755,88,892,115"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="726,38,806,88,801,87,725,43"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="764,119,567,173,566,167,758,119"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="799,124,743,173,741,168,794,126"/>
+<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="869,118,993,170,988,170,868,123"/>
+<area shape="rect" id="Node000012" href="$string_8h_source.html" title=" " alt="" coords="813,179,946,205"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="841,125,874,179,869,177,839,130"/>
+</map>

@@ -1,0 +1,63 @@
+\doxysection{libc/\+include/\+stddef.h File Reference}
+\hypertarget{stddef_8h}{}\label{stddef_8h}\index{libc/include/stddef.h@{libc/include/stddef.h}}
+
+
+Common definitions for C programs.  
+
+
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+Include dependency graph for stddef.\+h:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{stddef_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stddef_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{stddef_8h_a3c75bb398badb69c7577b21486f9963f}\label{stddef_8h_a3c75bb398badb69c7577b21486f9963f} 
+\+\#define {\bfseries SIZE\+\_\+\+MAX}~UINT32\+\_\+\+MAX
+\item 
+\Hypertarget{stddef_8h_ad9b88ba2fb858f98b50b38e49875d90e}\label{stddef_8h_ad9b88ba2fb858f98b50b38e49875d90e} 
+\+\#define {\bfseries PTRDIFF\+\_\+\+MIN}~(-\/2147483648)
+\item 
+\Hypertarget{stddef_8h_add2ef7bffac19cfdd1f4b5495409672f}\label{stddef_8h_add2ef7bffac19cfdd1f4b5495409672f} 
+\+\#define {\bfseries PTRDIFF\+\_\+\+MAX}~2147483647
+\item 
+\Hypertarget{stddef_8h_a051084d5ebcabf282d9ca9bb2b891a78}\label{stddef_8h_a051084d5ebcabf282d9ca9bb2b891a78} 
+\+\#define {\bfseries WCHAR\+\_\+\+MIN}~(-\/2147483648)
+\item 
+\Hypertarget{stddef_8h_a2a823f3ccf2306cfbaa34d8addf66010}\label{stddef_8h_a2a823f3ccf2306cfbaa34d8addf66010} 
+\+\#define {\bfseries WCHAR\+\_\+\+MAX}~2147483647
+\item 
+\Hypertarget{stddef_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}\label{stddef_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4} 
+\+\#define {\bfseries NULL}~((void\texorpdfstring{$\ast$}{*}) 0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{stddef_8h_a29d85914ddff32967d85ada69854206d}\label{stddef_8h_a29d85914ddff32967d85ada69854206d} 
+typedef uint32\+\_\+t {\bfseries size\+\_\+t}
+\item 
+\Hypertarget{stddef_8h_afbe679a40a36da5983ebc5b39754c065}\label{stddef_8h_afbe679a40a36da5983ebc5b39754c065} 
+typedef int {\bfseries ptrdiff\+\_\+t}
+\item 
+\Hypertarget{stddef_8h_a9c277a3fd853029cc853c877bcd32e8e}\label{stddef_8h_a9c277a3fd853029cc853c877bcd32e8e} 
+typedef int {\bfseries wchar\+\_\+t}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common definitions for C programs. 
+
+Provides fundamental types and macros required by C including NULL, size\+\_\+t, ptrdiff\+\_\+t, wchar\+\_\+t and their limits. 

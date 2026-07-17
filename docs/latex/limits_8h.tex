@@ -1,0 +1,111 @@
+\doxysection{libc/\+include/\+limits.h File Reference}
+\hypertarget{limits_8h}{}\label{limits_8h}\index{libc/include/limits.h@{libc/include/limits.h}}
+
+
+Implementation-\/defined limit constants for freestanding environment.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{limits_8h_a4b70e50dc618356974375f77e9fcd32d}\label{limits_8h_a4b70e50dc618356974375f77e9fcd32d} 
+\+\#define {\bfseries \+\_\+\+INC\+\_\+\+LIMITS}
+\item 
+\Hypertarget{limits_8h_a308d9dd2c0028ddb184b455bbd7865de}\label{limits_8h_a308d9dd2c0028ddb184b455bbd7865de} 
+\+\#define {\bfseries CHAR\+\_\+\+BIT}~8
+\item 
+\Hypertarget{limits_8h_aa05d197000ad5c143ada0fcd9379b236}\label{limits_8h_aa05d197000ad5c143ada0fcd9379b236} 
+\+\#define {\bfseries SCHAR\+\_\+\+MIN}~(-\/128)
+\item 
+\Hypertarget{limits_8h_a8c13fdd8c2840edf0cb04a65297037bb}\label{limits_8h_a8c13fdd8c2840edf0cb04a65297037bb} 
+\+\#define {\bfseries SCHAR\+\_\+\+MAX}~127
+\item 
+\Hypertarget{limits_8h_a4066e640ee269d5d8f83ff6643b7af5f}\label{limits_8h_a4066e640ee269d5d8f83ff6643b7af5f} 
+\+\#define {\bfseries UCHAR\+\_\+\+MAX}~0xff
+\item 
+\Hypertarget{limits_8h_a5d707bd32338557ced18c6ac76ca1b3a}\label{limits_8h_a5d707bd32338557ced18c6ac76ca1b3a} 
+\+\#define {\bfseries CHAR\+\_\+\+MIN}~SCHAR\+\_\+\+MIN
+\item 
+\Hypertarget{limits_8h_a778eefd6535a9d4b752fca5dd0af58db}\label{limits_8h_a778eefd6535a9d4b752fca5dd0af58db} 
+\+\#define {\bfseries CHAR\+\_\+\+MAX}~SCHAR\+\_\+\+MAX
+\item 
+\Hypertarget{limits_8h_a88a1b2d6ac46174ac7b571dca5b1f274}\label{limits_8h_a88a1b2d6ac46174ac7b571dca5b1f274} 
+\+\#define {\bfseries MB\+\_\+\+LEN\+\_\+\+MAX}~5
+\item 
+\Hypertarget{limits_8h_ae59de266aceffa1c258ac13f45fe0d18}\label{limits_8h_ae59de266aceffa1c258ac13f45fe0d18} 
+\+\#define {\bfseries SHRT\+\_\+\+MIN}~(-\/32768)
+\item 
+\Hypertarget{limits_8h_a1f758438cb1c7bcf55da2431f5e319e6}\label{limits_8h_a1f758438cb1c7bcf55da2431f5e319e6} 
+\+\#define {\bfseries SHRT\+\_\+\+MAX}~32767
+\item 
+\Hypertarget{limits_8h_a689b119da994dece91d44b5aeac643ed}\label{limits_8h_a689b119da994dece91d44b5aeac643ed} 
+\+\#define {\bfseries USHRT\+\_\+\+MAX}~0xffff
+\item 
+\Hypertarget{limits_8h_a21658776274b3d146c674318b635a334}\label{limits_8h_a21658776274b3d146c674318b635a334} 
+\+\#define {\bfseries INT\+\_\+\+MIN}~(-\/2147483647 -\/ 1)
+\item 
+\Hypertarget{limits_8h_a9ec306f36d50c7375e74f0d1c55a3a67}\label{limits_8h_a9ec306f36d50c7375e74f0d1c55a3a67} 
+\+\#define {\bfseries INT\+\_\+\+MAX}~2147483647
+\item 
+\Hypertarget{limits_8h_ac998ea02fbd821fc123d60445ce76f38}\label{limits_8h_ac998ea02fbd821fc123d60445ce76f38} 
+\+\#define {\bfseries UINT\+\_\+\+MAX}~0xffffffff
+\item 
+\Hypertarget{limits_8h_ae8a44c5a7436466221e0f3859d02420f}\label{limits_8h_ae8a44c5a7436466221e0f3859d02420f} 
+\+\#define {\bfseries LONG\+\_\+\+MIN}~(-\/2147483647L -\/ 1)
+\item 
+\Hypertarget{limits_8h_a50fece4db74f09568b2938db583c5655}\label{limits_8h_a50fece4db74f09568b2938db583c5655} 
+\+\#define {\bfseries LONG\+\_\+\+MAX}~2147483647L
+\item 
+\Hypertarget{limits_8h_a41c51926a1997aab3503f9083935e06c}\label{limits_8h_a41c51926a1997aab3503f9083935e06c} 
+\+\#define {\bfseries ULONG\+\_\+\+MAX}~0xffffffff\+UL
+\item 
+\Hypertarget{limits_8h_a23ec2cf7fc07ea8f817bbac758402baf}\label{limits_8h_a23ec2cf7fc07ea8f817bbac758402baf} 
+\+\#define {\bfseries LLONG\+\_\+\+MAX}~9223372036854775807i64
+\item 
+\Hypertarget{limits_8h_af17a13b2ae0e9c24c020ac1f044f30c2}\label{limits_8h_af17a13b2ae0e9c24c020ac1f044f30c2} 
+\+\#define {\bfseries LLONG\+\_\+\+MIN}~(-\/9223372036854775807i64 -\/ 1)
+\item 
+\Hypertarget{limits_8h_aa1dd7166a75b73ad62b111ae6fc17c59}\label{limits_8h_aa1dd7166a75b73ad62b111ae6fc17c59} 
+\+\#define {\bfseries ULLONG\+\_\+\+MAX}~0xffffffffffffffffui64
+\item 
+\Hypertarget{limits_8h_ae37362f6717a231f0447e12d1c0eebd6}\label{limits_8h_ae37362f6717a231f0447e12d1c0eebd6} 
+\+\#define {\bfseries \+\_\+\+I8\+\_\+\+MIN}~(-\/127i8 -\/ 1)
+\item 
+\Hypertarget{limits_8h_a02ba4081d52aef8409e262a7e72f4dfa}\label{limits_8h_a02ba4081d52aef8409e262a7e72f4dfa} 
+\+\#define {\bfseries \+\_\+\+I8\+\_\+\+MAX}~127i8
+\item 
+\Hypertarget{limits_8h_ab85df6d1f29dabb17075e6a4aaaa1564}\label{limits_8h_ab85df6d1f29dabb17075e6a4aaaa1564} 
+\+\#define {\bfseries \+\_\+\+UI8\+\_\+\+MAX}~0xffui8
+\item 
+\Hypertarget{limits_8h_aff745b3c2fb0f753276c8a504ab21091}\label{limits_8h_aff745b3c2fb0f753276c8a504ab21091} 
+\+\#define {\bfseries \+\_\+\+I16\+\_\+\+MIN}~(-\/32767i16 -\/ 1)
+\item 
+\Hypertarget{limits_8h_a73ed2c8b8dfc1616734367a68bf7342d}\label{limits_8h_a73ed2c8b8dfc1616734367a68bf7342d} 
+\+\#define {\bfseries \+\_\+\+I16\+\_\+\+MAX}~32767i16
+\item 
+\Hypertarget{limits_8h_ae2660520bdc85ef8e2c1a83064bfcd0b}\label{limits_8h_ae2660520bdc85ef8e2c1a83064bfcd0b} 
+\+\#define {\bfseries \+\_\+\+UI16\+\_\+\+MAX}~0xffffui16
+\item 
+\Hypertarget{limits_8h_ac330402c10bea97296fa9c2560db0827}\label{limits_8h_ac330402c10bea97296fa9c2560db0827} 
+\+\#define {\bfseries \+\_\+\+I32\+\_\+\+MIN}~(-\/2147483647i32 -\/ 1)
+\item 
+\Hypertarget{limits_8h_a8555b0cda85052d38481f46fee884970}\label{limits_8h_a8555b0cda85052d38481f46fee884970} 
+\+\#define {\bfseries \+\_\+\+I32\+\_\+\+MAX}~2147483647i32
+\item 
+\Hypertarget{limits_8h_a6efab332d650972dfb090a9c8840fa2e}\label{limits_8h_a6efab332d650972dfb090a9c8840fa2e} 
+\+\#define {\bfseries \+\_\+\+UI32\+\_\+\+MAX}~0xffffffffui32
+\item 
+\Hypertarget{limits_8h_a6d505234b61569ccb36829a3441ef3d2}\label{limits_8h_a6d505234b61569ccb36829a3441ef3d2} 
+\+\#define {\bfseries \+\_\+\+I64\+\_\+\+MIN}~(-\/9223372036854775807i64 -\/ 1)
+\item 
+\Hypertarget{limits_8h_a19b6104ec071ac5fcd78702a1db55209}\label{limits_8h_a19b6104ec071ac5fcd78702a1db55209} 
+\+\#define {\bfseries \+\_\+\+I64\+\_\+\+MAX}~9223372036854775807i64
+\item 
+\Hypertarget{limits_8h_acc6502a71a1ae124d7d5c15fa4602acf}\label{limits_8h_acc6502a71a1ae124d7d5c15fa4602acf} 
+\+\#define {\bfseries \+\_\+\+UI64\+\_\+\+MAX}~0xffffffffffffffffui64
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation-\/defined limit constants for freestanding environment. 
+

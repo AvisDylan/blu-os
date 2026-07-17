@@ -5,15 +5,22 @@
 #ifndef BLU_OS_STDIO_H
 #define BLU_OS_STDIO_H
 
-#include <sys/cdefs.h>
-
-#define EOF (-1)
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+/**
+ * @file stdio.h
+ * @brief Standard I/0
+ */
+
+#include <sys/cdefs.h>
+#include <stdarg.h>
+
+#define EOF (-1)
+
 int printf(const char* __restrict, ...);
+int vprintf(const char* __restrict, va_list);
 int putchar(int);
 int puts(const char*);
 

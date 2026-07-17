@@ -1,0 +1,11 @@
+<map id="libc/include/stddef.h" name="libc/include/stddef.h">
+<area shape="rect" id="Node000001" title="Common definitions for C programs." alt="" coords="382,5,520,32"/>
+<area shape="rect" id="Node000002" href="$physicalmemorymanager_8h_source.html" title=" " alt="" coords="5,80,273,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="390,36,220,82,219,77,385,37"/>
+<area shape="rect" id="Node000003" href="$vga_8h_source.html" title=" " alt="" coords="296,80,440,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="430,42,390,82,388,77,425,44"/>
+<area shape="rect" id="Node000004" href="$tty_8h_source.html" title=" " alt="" coords="465,80,605,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="476,40,516,80,511,79,474,45"/>
+<area shape="rect" id="Node000005" href="$string_8h_source.html" title=" " alt="" coords="630,88,763,115"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="504,35,661,87,655,88,503,40"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="kernel/src/arch/x86/i386" name="kernel/src/arch/x86/i386">
+<area shape="rect" id="node2" href="dir_a42faa698d021a1727cb0e3a8effd61c.html" title="gdt" alt="" coords="107,64,146,91"/>
+<area shape="rect" id="node7" href="dir_fc1eb218ab426e5adb60367f98438da0.html" title="libc" alt="" coords="169,139,210,165"/>
+<area shape="poly" id="edge1" href="dir_000005_000017.html" alt="" coords="139,89,171,127,166,127,136,94"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000005_000017.html" title="1" alt="" coords="170,111,177,127"/>
+<area shape="rect" id="node3" href="dir_606367c1e235cbdef3ba56231a385932.html" title="idt" alt="" coords="170,64,209,91"/>
+<area shape="rect" id="node4" href="dir_6e4b8e08e7f3bd1b02aff0671b6332bc.html" title="io" alt="" coords="233,64,271,91"/>
+<area shape="poly" id="edge2" href="dir_000013_000017.html" alt="" coords="244,90,212,129,209,125,239,92"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000013_000017.html" title="1" alt="" coords="215,122,222,138"/>
+<area shape="rect" id="node5" href="dir_55d05a4694c04f59b7f162d6389bd6a2.html" title="mmu" alt="" coords="295,64,345,91"/>
+<area shape="rect" id="node6" href="dir_7377ac59d3b6b3fff6b36644edd197dc.html" title="pic" alt="" coords="369,64,407,91"/>
+<area shape="rect" id="clust2" href="dir_360c9ccbf10f5b2ce74bca48de889854.html" alt="" coords="27,53,417,101"/>
+<area shape="rect" id="clust1" href="dir_6ff9dae608e72df64cf6f957d61fb3d9.html" title="x86" alt="" coords="16,16,428,112"/>
+</map>

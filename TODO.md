@@ -1,14 +1,18 @@
 # Checklist
 - [x] Boot
 - [x] Add vga
-- [x] Add libc
+- [-] Add libc [TODO](./libc/TODO.md)
 - [x] Add global descriptors
 - [x] Add IDT
 - [x] Remap PIC
 - [x] Add paging
 - [x] Add physical memory
 - [x] Add virtual memory & higher half
-- [ ] Add long mode
+- [x] Add long mode
+- [x] Add kernel abstraction layer
+- [ ] Add long mode global descriptors
+- [ ] Add long mode IDT
+- [ ] Split libk and libc
 - [ ] Add heap
 - [ ] Add threading
 - [ ] Add scheduler
