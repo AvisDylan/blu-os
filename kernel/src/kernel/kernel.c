@@ -1,29 +1,24 @@
 #include <kernel/tty/tty.h>
 #include <stdio.h>
-/*#include <arch/x86/i386/gdt/gdt.h>
-#include <arch/x86/i386/idt/idt.h>
-#include <arch/x86/i386/mmu/paging.h>
-#include <arch/x86/i386/mmu/physicalmemorymanager.h>
-#include <arch/x86/i386/mmu/virtualmemorymanager.h>*/
+#include <arch/kal.h>
 
 void kernelMain() {
     terminalInit();
     printf("Successfully initialized terminal\n");
 
-    /*
-    initGdt();
+    kalInitGdt();
     printf("Successfully initialized gdt\n");
 
-    initIdt();
+    kalInitIdt();
     printf("Successfully initialized idt\n");
 
     //TODO add physical memory size detection
-    initPhysicalMemoryManager(256);
+    kalInitPhysicalMemoryManager(256);
     printf("Successfully initialized physical memory manager\n");
 
-    initVirtualMemoryManager();
+    kalInitVirtualMemoryManager();
     printf("Successfully initialized virtual memory manager\n");
-    */
+
     printf("Hello, World!\n");
 
     for (;;) {}

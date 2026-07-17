@@ -10,7 +10,7 @@ set(KERNEL_COMMON_SOURCES
 )
 
 set(KERNEL_I386_SOURCES
-        src/arch/x86/i386/boot.s
+        src/arch/x86/i386/boot/boot.s
         src/arch/x86/i386/gdt/gdt.c
         src/arch/x86/i386/gdt/gdtflush.s
         src/arch/x86/i386/idt/idt.c
@@ -21,17 +21,19 @@ set(KERNEL_I386_SOURCES
         src/arch/x86/i386/mmu/paging.s
         src/arch/x86/i386/mmu/physicalmemorymanager.c
         src/arch/x86/i386/mmu/virtualmemorymanager.c
+        src/arch/x86/i386/kal.c
 )
 
 set(KERNEL_AMD64_SOURCES
-        src/arch/x86/amd64/boot.s
+        src/arch/x86/amd64/boot/boot.s
+        src/arch/x86/amd64/kal.c
 )
 
 if (ARCH_BITS EQUAL 64)
     add_compile_options(-mcmodel=large -mno-red-zone -mno-mmx -mno-sse -mno-sse2)
 
-    add_library(crti_amd64 OBJECT src/arch/x86/amd64/crti.s)
-    add_library(crtn_amd64 OBJECT src/arch/x86/amd64/crtn.s)
+    add_library(crti_amd64 OBJECT src/arch/x86/amd64/boot/crti.s)
+    add_library(crtn_amd64 OBJECT src/arch/x86/amd64/boot/crtn.s)
     set_target_properties(crti_amd64 PROPERTIES LANGUAGE ASM)
     set_target_properties(crtn_amd64 PROPERTIES LANGUAGE ASM)
 
@@ -44,15 +46,15 @@ if (ARCH_BITS EQUAL 64)
     )
 
     target_link_options(blu_os.kernel64 PRIVATE
-            -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/amd64/linker.ld
+            -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/amd64/boot/linker.ld
             $<TARGET_OBJECTS:crti_amd64>
             $<TARGET_OBJECTS:crtn_amd64>
     )
 
     target_link_libraries(blu_os.kernel64 PRIVATE libk gcc)
 else ()
-    add_library(crti_i386 OBJECT src/arch/x86/i386/crti.s)
-    add_library(crtn_i386 OBJECT src/arch/x86/i386/crtn.s)
+    add_library(crti_i386 OBJECT src/arch/x86/i386/boot/crti.s)
+    add_library(crtn_i386 OBJECT src/arch/x86/i386/boot/crtn.s)
     set_target_properties(crti_i386 PROPERTIES LANGUAGE ASM)
     set_target_properties(crtn_i386 PROPERTIES LANGUAGE ASM)
 
@@ -65,7 +67,7 @@ else ()
     )
 
     target_link_options(blu_os.kernel32 PRIVATE
-            -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/i386/linker.ld
+            -Wl,-T${CMAKE_CURRENT_SOURCE_DIR}/src/arch/x86/i386/boot/linker.ld
             $<TARGET_OBJECTS:crti_i386>
             $<TARGET_OBJECTS:crtn_i386>
     )

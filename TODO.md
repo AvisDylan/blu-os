@@ -9,7 +9,7 @@
 - [x] Add physical memory
 - [x] Add virtual memory & higher half
 - [x] Add long mode
-- [ ] Add KAH
+- [x] Add kernel abstraction layer
 - [ ] Add long mode global descriptors
 - [ ] Add long mode IDT
 - [ ] Add heap
