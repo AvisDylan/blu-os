@@ -4,9 +4,7 @@
 
 #include <arch/x86/i386/idt/idt.h>
 #include <arch/x86/i386/pic/pic.h>
-
-#include <stdio.h>
-#include <stdlib.h>
+#include <kernel/panic.h>
 
 __attribute__((aligned(0x10)))
 static IDTEntry idt[IDT_MAX_DESCRIPTORS];
@@ -14,7 +12,7 @@ static IDTR idtr;
 static uint64_t ticks = 0;
 
 void exceptionHandler(uint32_t vector, uint32_t errorCode) {
-    abort();
+    panic("Kernel panic");
 }
 
 void irqHandler(uint32_t vector, uint32_t errorCode) {
