@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <arch/kal.h>
 
+//TODO replace libc printf with libk printf
 void kernelMain() {
     terminalInit();
     printf("Successfully initialized terminal\n");
