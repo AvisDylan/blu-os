@@ -11,9 +11,13 @@
 - [x] Add long mode
 - [x] Add kernel abstraction layer
 - [x] Add long mode global descriptors
-- [ ] Add long mode IDT
-- [ ] Split libk and libc
-- [-] Add heap
+- [x] Add long mode IDT
+- [ ] Remap PIC on long mode
+- [ ] Add long mode virtual memory manager
+- [ ] Add long mode paging
+- [x] Split libk and libc
+- [-] Add protected mode heap
+- [ ] Add long mode heap
 - [ ] Add threading
 - [ ] Add scheduler
 - [ ] Add local APIC
@@ -37,5 +41,8 @@
 - [ ] Add package manager
 - [ ] Port gcc/clang, python, java
 - [ ] Add libc++
+- [ ] Add BIOS VBE
+- [ ] Add UEFI
+- [ ] Add UEFI Video
 - [ ] Add desktop enviroment
 - [ ] Add apps
