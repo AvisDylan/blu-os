@@ -29,5 +29,13 @@ We use a unfied C++ code style via [.clang-format](./.clang-format)
 Full documentation is available in the [Doxygen](https://www.doxygen.nl/index.html) generated site: [Documentation](https://avisdylan.github.io/blu-os/html/)
 
 ### How to build
-TODO finish this section
+You can find some scripts to build and make the iso in `scripts/`. Find the appropriate build script for the target arch.
+**NOTE: to build you need GCC elf cross-compiler, and grub**
 
+#### Build scripts:
+- [amd64](./scripts/build-amd64.sh)
+- [i386](./scripts/build-i386.sh)
+
+#### ISO scripts:
+- [amd64](./scripts/build-amd64-iso.sh)
+- [i386](./scripts/build-i386-iso.sh)
