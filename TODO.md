@@ -1,7 +1,7 @@
 # Checklist
 - [x] Boot
 - [x] Add vga
-- [-] Add libc [TODO](./libc/TODO.md)
+- [-] Add libk
 - [x] Add global descriptors
 - [x] Add IDT
 - [x] Remap PIC
@@ -22,6 +22,7 @@
 - [ ] Add multiprocessing
 - [ ] Add elf loader
 - [ ] Add syscalls
+- [-] Add libc [TODO](./libc/TODO.md)
 - [ ] Add kernel permissions
 - [ ] Add process priority + affinity
 - [ ] Add ipc
