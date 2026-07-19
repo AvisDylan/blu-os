@@ -5,6 +5,7 @@
 #include <kernel/mm/slab.h>
 #include <stddef.h>
 #include <kernel/mm/heap.h>
+#include <arch/x86/i386/mmu/physicalmemorymanager.h>
 
 static Slab* slabCreate(uint32_t objectSize) {
     void* page = allocPages(1);

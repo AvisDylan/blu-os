@@ -11,6 +11,10 @@ set(KERNEL_COMMON_SOURCES
         src/kernel/libk/panic.c
         src/kernel/libk/stdio/kputchar.c
         src/kernel/libk/string/strlen.c
+        src/kernel/libk/stdlib/kfree.c
+        src/kernel/libk/stdlib/kmalloc.c
+        src/kernel/mm/heap.c
+        src/kernel/mm/slab.c
 )
 
 set(KERNEL_I386_SOURCES
