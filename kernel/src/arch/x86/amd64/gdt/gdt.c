@@ -5,12 +5,13 @@
 #include <arch/x86/amd64/gdt/gdt.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <kernel/libk/stdio.h>
 
 static uint8_t gdt[3][8];
 
 void encodeGdtEntry(uint8_t* target, GDT source) {
     if (source.limit > 0xfffff) {
-        printf("GDT cannot encode limits larger than 0xffffF\n"); 
+        kprintf("GDT cannot encode limits larger than 0xffffF\n");
         return;
     }
     

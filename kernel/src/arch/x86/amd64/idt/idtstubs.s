@@ -53,21 +53,7 @@ ISR_ERR 30
 ISR_NO_ERR 31
 
 isr_common:
-    pusha
-
-    mov rax, [rsp + 32]
-    push rax
-
-    mov rax, [rsp + 36]
-    push rax
-
-    call exceptionHandler
-
-    add rsp, 8
-
-    popa
-    add rsp, 8
-    iret
+    ret
 
 .section .data
 .align 8

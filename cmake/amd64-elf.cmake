@@ -15,12 +15,12 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 set(ARCH_BITS 64)
 set(ARCH_FLAGS -m64)
 
-set(CMAKE_C_FLAGS_INIT "${ARCH_FLAGS} -ffreestanding -nostdinc -Wall -Wextra -fno-exceptions")
-set(CMAKE_CXX_FLAGS_INIT "${ARCH_FLAGS} -ffreestanding -nostdinc -Wall -Wextra -fno-exceptions -fno-rtti")
+set(CMAKE_C_FLAGS_INIT "${ARCH_FLAGS} -ffreestanding -nostdlib -nostartfiles -nodefaultlibs -Wall -Wextra -fno-exceptions")
+set(CMAKE_CXX_FLAGS_INIT "${ARCH_FLAGS} -ffreestanding -nostdlib -nostartfiles -nodefaultlibs -Wall -Wextra -fno-exceptions -fno-rtti")
 set(CMAKE_ASM_FLAGS_INIT "${ARCH_FLAGS} -x assembler-with-cpp")
 set(CMAKE_ASM_SOURCE_FILE_EXTENSIONS s)
 
-set(CMAKE_EXE_LINKER_FLAGS_INIT "-ffreestanding -nostdlib -Wl,--as-needed")
+set(CMAKE_EXE_LINKER_FLAGS_INIT "-ffreestanding -nostdlib -nostartfiles -nodefaultlibs -Wl,--as-needed")
 
 set(CMAKE_C_LINK_EXECUTABLE "<CMAKE_C_COMPILER> <FLAGS> <CMAKE_C_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>")
 set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER> <FLAGS> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>")

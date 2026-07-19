@@ -2,7 +2,7 @@
 // Created by dylan on 17/07/2026.
 //
 
-#include <kernel/panic.h>
+#include <kernel/libk/panic.h>
 #include <stdarg.h>
 
 __attribute__((__noreturn__))

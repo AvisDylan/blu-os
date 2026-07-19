@@ -4,7 +4,7 @@
 
 #include <arch/x86/amd64/idt/idt.h>
 // #include <arch/x86/amd64/pic/pic.h>
-#include <kernel/panic.h>
+#include <kernel/libk/panic.h>
 
 __attribute__((aligned(0x10)))
 static IDTEntry idt[IDT_MAX_DESCRIPTORS];
@@ -44,7 +44,6 @@ void idtSetDescriptor(uint8_t vector, void* isr, uint8_t flags) {
     descriptor->isrMid = (addr >> 16) & 0xffff;
     descriptor->isrHigh = (addr >> 32) & 0xffffffff;
     descriptor->reserved = 0;
-}
 }
 
 void initIdt() {

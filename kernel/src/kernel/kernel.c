@@ -1,26 +1,26 @@
 #include <kernel/tty/tty.h>
-#include <stdio.h>
 #include <arch/kal.h>
+#include <kernel/libk/stdio.h>
 
 //TODO replace libc printf with libk printf
 void kernelMain() {
     terminalInit();
-    printf("Successfully initialized terminal\n");
+    kprintf("Successfully initialized terminal\n");
 
     kalInitGdt();
-    printf("Successfully initialized gdt\n");
+    kprintf("Successfully initialized gdt\n");
 
     kalInitIdt();
-    printf("Successfully initialized idt\n");
+    kprintf("Successfully initialized idt\n");
 
     //TODO add physical memory size detection
     kalInitPhysicalMemoryManager(256);
-    printf("Successfully initialized physical memory manager\n");
+    kprintf("Successfully initialized physical memory manager\n");
 
     kalInitVirtualMemoryManager();
-    printf("Successfully initialized virtual memory manager\n");
+    kprintf("Successfully initialized virtual memory manager\n");
 
-    printf("Hello, World!\n");
+    kprintf("Hello, World!\n");
 
     for (;;) {}
 }

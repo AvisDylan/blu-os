@@ -7,6 +7,10 @@ set(KERNEL_COMMON_SOURCES
         src/drivers/vga.c
         src/kernel/kernel.c
         src/kernel/tty/tty.c
+        src/kernel/libk/stdio/kprintf.c
+        src/kernel/libk/panic.c
+        src/kernel/libk/stdio/kputchar.c
+        src/kernel/libk/string/strlen.c
 )
 
 set(KERNEL_I386_SOURCES
@@ -29,6 +33,8 @@ set(KERNEL_AMD64_SOURCES
         src/arch/x86/amd64/kal.c
         src/arch/x86/amd64/gdt/gdtflush.s
         src/arch/x86/amd64/gdt/gdt.c
+        src/arch/x86/amd64/idt/idtstubs.s
+        src/arch/x86/amd64/idt/idt.c
 )
 
 if (ARCH_BITS EQUAL 64)
@@ -44,7 +50,6 @@ if (ARCH_BITS EQUAL 64)
 
     target_include_directories(blu_os.kernel64 PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/include
-            ${CMAKE_SOURCE_DIR}/libc/include
     )
 
     target_link_options(blu_os.kernel64 PRIVATE
@@ -53,7 +58,7 @@ if (ARCH_BITS EQUAL 64)
             $<TARGET_OBJECTS:crtn_amd64>
     )
 
-    target_link_libraries(blu_os.kernel64 PRIVATE libk gcc)
+    target_link_libraries(blu_os.kernel64 PRIVATE gcc)
 else ()
     add_library(crti_i386 OBJECT src/arch/x86/i386/boot/crti.s)
     add_library(crtn_i386 OBJECT src/arch/x86/i386/boot/crtn.s)
@@ -65,7 +70,6 @@ else ()
 
     target_include_directories(blu_os.kernel32 PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/include
-            ${CMAKE_SOURCE_DIR}/libc/include
     )
 
     target_link_options(blu_os.kernel32 PRIVATE
@@ -74,5 +78,5 @@ else ()
             $<TARGET_OBJECTS:crtn_i386>
     )
 
-    target_link_libraries(blu_os.kernel32 PRIVATE libk gcc)
+    target_link_libraries(blu_os.kernel32 PRIVATE gcc)
 endif ()
