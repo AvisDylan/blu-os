@@ -10,7 +10,7 @@
 
 #ifdef __x86_64__
     #define VGA_MEMORY 0xFFFFFFFF800B8000
-#elif
+#else
     #define VGA_MEMORY 0xb8000
 #endif
 
