@@ -1,9 +1,16 @@
 <toolSet name="External Tools">
-  <tool name="Ninja" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+  <tool name="Ninja amd64" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
     <exec>
       <option name="COMMAND" value="/usr/bin/ninja-build" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$USER_HOME$/CLionProjects/blu-os/build/x86_64-release" />
+    </exec>
+  </tool>
+  <tool name="Ninja i386" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="/usr/bin/ninja-build" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/CLionProjects/blu-os/build/i386-release" />
     </exec>
   </tool>
 </toolSet>

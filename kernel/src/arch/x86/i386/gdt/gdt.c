@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <arch/x86/i386/gdt/gdt.h>
 #include <stdio.h>
+#include <kernel/libk/stdio.h>
 
 static uint8_t gdt[3][8];
 

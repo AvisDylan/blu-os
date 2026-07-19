@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CLionExternalBuildManager">
-    <target id="da3359e9-1f4a-4508-9a94-082ff3225c67" name="Ninja build" defaultType="TOOL">
-      <configuration id="733941ea-6017-4d22-b6f0-87dc98dc92d3" name="Ninja build">
+    <target id="da3359e9-1f4a-4508-9a94-082ff3225c67" name="Ninja build amd64" defaultType="TOOL">
+      <configuration id="733941ea-6017-4d22-b6f0-87dc98dc92d3" name="Ninja build amd64">
         <build type="TOOL">
-          <tool actionId="Tool_External Tools_Ninja" />
+          <tool actionId="Tool_External Tools_Ninja amd64" />
+        </build>
+      </configuration>
+    </target>
+    <target id="54cd31cd-c6ef-4964-a203-259d051b88d7" name="Ninja build i386" defaultType="TOOL">
+      <configuration id="413d7dd6-8ab0-4354-9291-99e646fbba53" name="Ninja build i386">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_Ninja i386" />
         </build>
       </configuration>
     </target>

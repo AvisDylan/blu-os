@@ -4,7 +4,7 @@
 
 #include <arch/x86/i386/idt/idt.h>
 #include <arch/x86/i386/pic/pic.h>
-#include <kernel/panic.h>
+#include <kernel/libk/panic.h>
 
 __attribute__((aligned(0x10)))
 static IDTEntry idt[IDT_MAX_DESCRIPTORS];
