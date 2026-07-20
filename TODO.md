@@ -27,6 +27,7 @@
 - [ ] Add elf loader
 - [ ] Add syscalls
 - [-] Add libc [TODO](./libc/TODO.md)
+- [ ] Add unit tests for libc and kernel
 - [ ] Add kernel permissions
 - [ ] Add process priority + affinity
 - [ ] Add ipc

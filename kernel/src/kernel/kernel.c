@@ -4,9 +4,9 @@
 #include <kernel/mm/heap.h>
 #include <kernel/libk/stdlib.h>
 
-/*typedef struct {
+typedef struct {
     uint32_t x;
-} Example;*/
+} Example;
 
 void kernelMain() {
     terminalInit();
@@ -28,11 +28,11 @@ void kernelMain() {
     heapInit();
     kprintf("Successfully initialized heap\n");
 
-    /*Example* example = kmalloc(sizeof(Example));
+    Example* example = kmalloc(sizeof(Example));
 
-    kprintf("%x", example);
+    kprintf("0x%x\n", example);
 
-    kfree(example);*/
+    kfree(example);
 
     kprintf("Hello, World!\n");
 
