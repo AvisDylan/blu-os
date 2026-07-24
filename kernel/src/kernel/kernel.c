@@ -4,9 +4,17 @@
 #include <kernel/mm/heap.h>
 #include <kernel/libk/stdlib.h>
 
-typedef struct {
-    uint32_t x;
-} Example;
+int thread1() {
+    kprintf("Thread 1");
+
+    return 0;
+}
+
+int thread2() {
+    kprintf("Thread 2");
+
+    return 0;
+}
 
 void kernelMain() {
     terminalInit();
@@ -28,11 +36,11 @@ void kernelMain() {
     heapInit();
     kprintf("Successfully initialized heap\n");
 
-    Example* example = kmalloc(sizeof(Example));
+    thread_t* t1 = createThread(thread1, 4096);
+    thread_t* t2 = createThread(thread2, 4096);
 
-    kprintf("0x%x\n", example);
-
-    kfree(example);
+    threadSwitch(NULL, t1);
+    threadSwitch(NULL, t2);
 
     kprintf("Hello, World!\n");
 

@@ -5,12 +5,16 @@
 #ifndef BLU_OS_HAL_H
 #define BLU_OS_HAL_H
 
-void kalInitGdt(void);
+#include <kernel/thread/thread.h>
 
-void kalInitIdt(void);
+void kalInitGdt();
+
+void kalInitIdt();
 
 void kalInitPhysicalMemoryManager(size_t memSizeInMb);
 
-void kalInitVirtualMemoryManager(void);
+void kalInitVirtualMemoryManager();
+
+void kalThreadSetupStack(thread_t* t);
 
 #endif //BLU_OS_HAL_H

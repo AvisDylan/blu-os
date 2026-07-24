@@ -15,6 +15,7 @@ set(KERNEL_COMMON_SOURCES
         src/kernel/libk/stdlib/kmalloc.c
         src/kernel/mm/heap.c
         src/kernel/mm/slab.c
+        src/kernel/thread/thread.c
 )
 
 set(KERNEL_I386_SOURCES
@@ -30,6 +31,7 @@ set(KERNEL_I386_SOURCES
         src/arch/x86/i386/mmu/physicalmemorymanager.c
         src/arch/x86/i386/mmu/virtualmemorymanager.c
         src/arch/x86/i386/kal.c
+        src/arch/x86/i386/thread/threadswitch.s
 )
 
 set(KERNEL_AMD64_SOURCES
@@ -39,6 +41,7 @@ set(KERNEL_AMD64_SOURCES
         src/arch/x86/amd64/gdt/gdt.c
         src/arch/x86/amd64/idt/idtstubs.s
         src/arch/x86/amd64/idt/idt.c
+        src/arch/x86/amd64/thread/threadswitch.s
 )
 
 if (ARCH_BITS EQUAL 64)

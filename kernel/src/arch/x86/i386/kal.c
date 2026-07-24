@@ -7,12 +7,13 @@
 #include <arch/x86/i386/gdt/gdt.h>
 #include <arch/x86/i386/mmu/virtualmemorymanager.h>
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
+#include <kernel/thread/thread.h>
 
-void kalInitGdt(void) {
+void kalInitGdt() {
     initGdt();
 }
 
-void kalInitIdt(void) {
+void kalInitIdt() {
     initIdt();
 }
 
@@ -20,6 +21,19 @@ void kalInitPhysicalMemoryManager(size_t memSizeInMb) {
     initPhysicalMemoryManager(memSizeInMb);
 }
 
-void kalInitVirtualMemoryManager(void) {
+void kalInitVirtualMemoryManager() {
     initVirtualMemoryManager();
+}
+
+void kalThreadSetupStack(thread_t* t) {
+    uint32_t* stackPointer = (uint32_t*) t->stackPointer;
+    stackPointer -= 5;
+
+    stackPointer[0] = (uint32_t) t->entryPoint;
+    stackPointer[1] = 0;
+    stackPointer[2] = 0;
+    stackPointer[3] = 0;
+    stackPointer[4] = 0;
+
+    t->stackPointer = (void*) stackPointer;
 }

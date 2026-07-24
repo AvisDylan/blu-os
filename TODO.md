@@ -18,7 +18,7 @@
 - [x] Split libk and libc
 - [-] Add protected mode heap
 - [ ] Add long mode heap
-- [ ] Add threading
+- [-] Add threading
 - [ ] Add scheduler
 - [ ] Add local APIC
 - [ ] Write driver for IOAPIC
