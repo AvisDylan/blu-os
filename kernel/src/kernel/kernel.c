@@ -40,6 +40,7 @@ void kernelMain() {
     thread_t* t2 = createThread(thread2, 4096);
 
     threadSwitch(NULL, t1);
+
     threadSwitch(NULL, t2);
 
     kprintf("Hello, World!\n");

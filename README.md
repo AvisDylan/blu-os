@@ -2,7 +2,7 @@
 
 ### License
 
-Licenced under [GLPv3](./License.txt).
+Licenced under [GPLv3](./License.txt).
 
 ### Description
 

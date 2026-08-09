@@ -29,10 +29,10 @@ void kalThreadSetupStack(thread_t* t) {
     uint32_t* stackPointer = (uint32_t*) t->stackPointer;
     stackPointer -= 5;
 
-    stackPointer[0] = (uint32_t) t->entryPoint;
-    stackPointer[1] = 0;
-    stackPointer[2] = 0;
-    stackPointer[3] = 0;
+    stackPointer[0] = (uint32_t) t->entryPoint;  // This will be popped as EIP by ret
+    stackPointer[1] = 0;  // EBP
+    stackPointer[2] = 0;  // EBX
+    stackPointer[3] = 0;  // ESI
     stackPointer[4] = 0;
 
     t->stackPointer = (void*) stackPointer;
