@@ -12,8 +12,8 @@ static tid_t nextTid = 1;
  * @param stackSize Size of stack for thread in bytes.
  * @return Pointer to created thread or NULL on failure.
  */
-thread_t* createThread(thread_entry_t entry, size_t stackSize) {
-    thread_t* t = (thread_t*) kmalloc(sizeof(thread_t));
+Thread* createThread(thread_entry_t entry, size_t stackSize) {
+    Thread* t = (Thread*) kmalloc(sizeof(Thread));
 
     if (!t)
         return NULL;
@@ -38,4 +38,4 @@ thread_t* createThread(thread_entry_t entry, size_t stackSize) {
     return t;
 }
 
-thread_t* threadCurrent();
+Thread* threadCurrent();

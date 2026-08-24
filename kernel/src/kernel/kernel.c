@@ -1,8 +1,12 @@
-#include <kernel/tty/tty.h>
+// Created by Avis on 24/08/2026
+
 #include <arch/kal.h>
+#include <arch/x86/boot/multiboot.h>
 #include <kernel/libk/stdio.h>
-#include <kernel/mm/heap.h>
 #include <kernel/libk/stdlib.h>
+#include <kernel/mm/heap.h>
+#include <kernel/tty/tty.h>
+#include <stdint.h>
 
 int thread1() {
     kprintf("Thread 1");
@@ -16,7 +20,15 @@ int thread2() {
     return 0;
 }
 
-void kernelMain() {
+void kernelMain(uint32_t magic, uint32_t mbiAddress) {
+    if (magic != MULTI_BOOT_MAGIC) {
+        for (;;) {
+            asm volatile("hlt");
+        }
+    }
+
+    MultibootInfo* multiBootInfo = (MultibootInfo*) mbiAddress;
+
     terminalInit();
     kprintf("Successfully initialized terminal\n");
 
@@ -26,7 +38,7 @@ void kernelMain() {
     kalInitIdt();
     kprintf("Successfully initialized idt\n");
 
-    //TODO add physical memory size detection
+    // TODO add physical memory size detection
     kalInitPhysicalMemoryManager(256);
     kprintf("Successfully initialized physical memory manager\n");
 
@@ -36,14 +48,15 @@ void kernelMain() {
     heapInit();
     kprintf("Successfully initialized heap\n");
 
-    thread_t* t1 = createThread(thread1, 4096);
-    thread_t* t2 = createThread(thread2, 4096);
+    // thread_t* t1 = createThread(thread1, 4096);
+    // thread_t* t2 = createThread(thread2, 4096);
 
-    threadSwitch(NULL, t1);
+    // threadSwitch(NULL, t1);
 
-    threadSwitch(NULL, t2);
+    // threadSwitch(NULL, t2);
 
     kprintf("Hello, World!\n");
 
-    for (;;) {}
+    for (;;) {
+    }
 }

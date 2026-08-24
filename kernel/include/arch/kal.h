@@ -15,6 +15,6 @@ void kalInitPhysicalMemoryManager(size_t memSizeInMb);
 
 void kalInitVirtualMemoryManager();
 
-void kalThreadSetupStack(thread_t* t);
+void kalThreadSetupStack(Thread* t);
 
-#endif //BLU_OS_HAL_H
+#endif // BLU_OS_HAL_H

@@ -16,12 +16,12 @@ typedef struct {
     void* stackPointer;
     thread_entry_t entryPoint;
     uint8_t state;
-} thread_t;
+} Thread;
 
-extern void threadSwitch(thread_t* from, thread_t* to);
+extern void threadSwitch(Thread* from, Thread* to);
 
-thread_t* createThread(thread_entry_t entry, size_t stackSize);
+Thread* createThread(thread_entry_t entry, size_t stackSize);
 
-thread_t* threadCurrent();
+Thread* threadCurrent();
 
 #endif

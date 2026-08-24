@@ -20,6 +20,8 @@
 - [ ] Add long mode heap
 - [x] Add threading
 - [ ] Add scheduler
+- [x] Pass multi boot info in i386
+- [-] Pass multi boot info in amd64
 - [ ] Add local APIC
 - [ ] Write driver for IOAPIC
 - [ ] Add timers

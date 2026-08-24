@@ -23,11 +23,24 @@ boot_page_directory:
 stack_bottom:
 	.skip 16384
 stack_top:
+.align 8 
+boot_magic:
+    .skip 4 
+boot_mbi_phys:
+    .skip 4 
 
 .section .text
 .global _start
 .type _start, @function
 _start:
+    lea edi, [boot_magic]
+    sub edi, 0xC0000000
+    mov [edi], eax
+
+    lea edi, [boot_mbi_phys]
+    sub edi, 0xC0000000
+    mov [edi], ebx
+
     lea edi, [boot_page_directory]
     sub edi, 0xC0000000
 
@@ -63,7 +76,15 @@ higher_half:
 
     mov esp, offset stack_top
 
+    mov esi, [boot_mbi_phys]
+    mov edi, 0x20000
+    mov ecx, 4096
+    rep movsb
+
     call _init
+
+    push 0x20000
+    push [boot_magic]
     call kernelMain
 
 1:  cli
