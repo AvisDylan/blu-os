@@ -5,6 +5,15 @@
 
 #include <stdint.h>
 
+typedef struct {
+    uint32_t size;
+    uint64_t addr;
+    uint64_t len;
+    uint32_t type;
+} __attribute__((packed)) MultibootMemoryMapEntry;
+
+#define MULTIBOOT_INFO_MEM_MAP (1 << 6)
+#define MULTIBOOT_MEMORY_AVAILABLE 1
 #define MULTI_BOOT_MAGIC 0x2BADB002
 
 typedef struct {

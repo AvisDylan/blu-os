@@ -37,5 +37,3 @@ Thread* createThread(thread_entry_t entry, size_t stackSize) {
 
     return t;
 }
-
-Thread* threadCurrent();

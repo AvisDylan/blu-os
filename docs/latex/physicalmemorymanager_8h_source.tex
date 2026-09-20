@@ -9,8 +9,8 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_PHYSICALMEMORYMANAGER\_H}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BLU\_OS\_PHYSICALMEMORYMANAGER\_H}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stddef_8h}{stddef.h}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stddef_8h}{stddef.h}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ KERNEL\_VMA\ 0xC0000000}}
 \DoxyCodeLine{00012\ }
@@ -29,6 +29,8 @@
 \DoxyCodeLine{00025\ }
 \DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ kfreeFrame(physical\_addr\_t\ frameAddress);}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLU\_OS\_PHYSICALMEMORYMANAGER\_H}}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ markRangeUsed(physical\_addr\_t\ address,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BLU\_OS\_PHYSICALMEMORYMANAGER\_H}}
 
 \end{DoxyCode}

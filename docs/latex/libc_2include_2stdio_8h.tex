@@ -1,0 +1,83 @@
+\doxysection{libc/\+include/\+stdio.h File Reference}
+\hypertarget{libc_2include_2stdio_8h}{}\label{libc_2include_2stdio_8h}\index{libc/include/stdio.h@{libc/include/stdio.h}}
+
+
+Standard I/\+0.  
+
+
+{\ttfamily \+\#include $<$sys/\+cdefs.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdarg.\+h$>$}\newline
+Include dependency graph for stdio.\+h:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{libc_2include_2stdio_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{libc_2include_2stdio_8h_a59adc4c82490d23754cd39c2fb99b0da}\label{libc_2include_2stdio_8h_a59adc4c82490d23754cd39c2fb99b0da} 
+\+\#define {\bfseries EOF}~(-\/1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{libc_2include_2stdio_8h_ac16296a132cddc6b818afcf12b6305c0}\label{libc_2include_2stdio_8h_ac16296a132cddc6b818afcf12b6305c0} 
+int {\bfseries printf} (const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict,...)
+\item 
+\Hypertarget{libc_2include_2stdio_8h_a524fcab7902c07fe7172ba6ee7b86b4b}\label{libc_2include_2stdio_8h_a524fcab7902c07fe7172ba6ee7b86b4b} 
+int {\bfseries vprintf} (const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict, va\+\_\+list)
+\item 
+\Hypertarget{libc_2include_2stdio_8h_a11545ba0d66ca201aab1652e1031ee02}\label{libc_2include_2stdio_8h_a11545ba0d66ca201aab1652e1031ee02} 
+int {\bfseries putchar} (int)
+\item 
+int \doxymbox{\hyperlink{libc_2include_2stdio_8h_ad6eb8da5b318991f44cdd98e20939b7d}{puts}} (const char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Write a string followed by newline to console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Standard I/\+0. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{libc_2include_2stdio_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{libc_2include_2stdio_8h_ad6eb8da5b318991f44cdd98e20939b7d}\index{stdio.h@{stdio.h}!puts@{puts}}
+\index{puts@{puts}!stdio.h@{stdio.h}}
+\doxysubsubsection{\texorpdfstring{puts()}{puts()}}
+{\footnotesize\ttfamily \label{libc_2include_2stdio_8h_ad6eb8da5b318991f44cdd98e20939b7d} 
+int puts (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Write a string followed by newline to console. 
+
+Writes a string to console followed by a newline character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & String to print to console. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value is the number of characters written or -\/1 in the case of failure. 
+\end{DoxyReturn}
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=115pt]{libc_2include_2stdio_8h_ad6eb8da5b318991f44cdd98e20939b7d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=115pt]{libc_2include_2stdio_8h_ad6eb8da5b318991f44cdd98e20939b7d_icgraph}
+\end{center}
+\end{figure}

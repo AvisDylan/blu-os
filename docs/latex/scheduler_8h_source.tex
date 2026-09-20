@@ -1,0 +1,21 @@
+\doxysection{scheduler.\+h}
+\hypertarget{scheduler_8h_source}{}\label{scheduler_8h_source}\index{kernel/include/kernel/scheduler/scheduler.h@{kernel/include/kernel/scheduler/scheduler.h}}
+\doxymbox{\hyperlink{scheduler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_SCHEDULER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ BLU\_OS\_SCHEDULER\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <kernel/thread/thread.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{scheduler_8h_af08ae3a41511be2118bef1cb79e52adc}{schedulerInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{scheduler_8h_ac59f08cd5db6c1f230cda84c78105722}{schedulerAddThread}}(Thread*\ \doxymbox{\hyperlink{structthread}{thread}});}
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ schedulerYield(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ schedulerExitCurrent(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ threadTrampoline(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00017\ Thread*\ \doxymbox{\hyperlink{scheduler_8h_a93bdc803b8c8665da6a0d578ad183320}{getCurrentThread}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

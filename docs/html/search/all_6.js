@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['license_0',['License',['../index.html#autotoc_md1',1,'']]],
-  ['limits_2eh_1',['limits.h',['../limits_8h.html',1,'']]]
+  ['how_20to_20build_0',['How to build',['../index.html#autotoc_md6',1,'']]]
 ];

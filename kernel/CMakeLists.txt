@@ -16,6 +16,7 @@ set(KERNEL_COMMON_SOURCES
         src/kernel/mm/heap.c
         src/kernel/mm/slab.c
         src/kernel/thread/thread.c
+        src/kernel/scheduler/scheduler.c
 )
 
 set(KERNEL_I386_SOURCES

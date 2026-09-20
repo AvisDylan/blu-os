@@ -94,32 +94,34 @@ $(function(){initNavTree('index.html','',''); });
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 License</h2>
-<p>Licenced under <a href="./License.txt">GLPv3</a></p>
+<p>Licenced under <a href="./License.txt">GPLv3</a>.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Description</h2>
-<p>Blu OS is a hobby x86 operating system</p>
+<p>Blu OS is a hobby x86 operating system.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Goals</h2>
-<p>Blu OS as of now is just a hobby OS made for fun. A roadmap can be found in TODO</p>
+<p>Blu OS as of now is just a hobby OS made for fun. A roadmap can be found in TODO.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
-Code style</h2>
-<p>We use a unfied C++ code style via <a href="./.clang-format">.clang-format</a></p><ul>
-<li>Formatting rules are found in <a href="./.clang-format">.clang-format</a></li>
-<li>Most modern IDEs automatically pick up on the format file</li>
-<li>Run your IDEs auto format or use <span class="tt">clang-format -i</span> before committing</li>
-</ul>
+Contributing</h2>
+<p>Please go ahead and read our CONTRIBUTING before making pull requests.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
-Code structure</h2>
-<ul>
-<li><span class="tt">kernel/</span> contains base kernel code</li>
-<li><span class="tt">libc/</span> contains libc</li>
-</ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Documentation</h2>
-<p>Full documentation is available in the <a href="https://www.doxygen.nl/index.html">Doxygen</a> generated site: <a href="https://avisdylan.github.io/blu-os/html/">Documentation</a></p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<p>Full documentation is available in the <a href="https://www.doxygen.nl/index.html">Doxygen</a> generated site: <a href="https://avisdylan.github.io/blu-os/html/">Documentation</a>.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 How to build</h2>
-<p>TODO finish this section </p>
+<p>You can find some scripts to build and make the iso in <span class="tt">scripts/</span>. Find the appropriate build script for the target architecture. <b>NOTE: to build you need GCC elf cross-compiler, and grub.</b></p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Build scripts:</h3>
+<ul>
+<li><a href="./scripts/build-amd64.sh">amd64</a></li>
+<li><a href="./scripts/build-i386.sh">i386</a></li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+ISO scripts:</h3>
+<ul>
+<li><a href="./scripts/build-amd64-iso.sh">amd64</a></li>
+<li><a href="./scripts/build-i386-iso.sh">i386</a> </li>
+</ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

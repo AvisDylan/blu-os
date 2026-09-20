@@ -1,0 +1,10 @@
+<map id="kernel/include/kernel/scheduler/scheduler.h" name="kernel/include/kernel/scheduler/scheduler.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,158,48"/>
+<area shape="rect" id="Node000002" href="$thread_8h_source.html" title=" " alt="" coords="8,96,155,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,46,84,81,79,80,81,51"/>
+<area shape="rect" id="Node000003" href="$stddef_8h.html" title="Common definitions for C programs." alt="" coords="11,171,80,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="74,126,61,158,56,155,76,121"/>
+<area shape="rect" id="Node000004" href="$stdint_8h.html" title="Fixed&#45;width integer types." alt="" coords="49,245,114,272"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="85,121,95,170,95,202,90,231,85,229,89,201,90,171,83,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="53,196,71,231,66,231,50,200"/>
+</map>

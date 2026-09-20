@@ -6,6 +6,7 @@
 #include <arch/x86/i386/idt/idt.h>
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
 #include <arch/x86/i386/mmu/virtualmemorymanager.h>
+#include <kernel/scheduler/scheduler.h>
 #include <kernel/thread/thread.h>
 #include <stddef.h>
 
@@ -15,17 +16,19 @@ void kalInitIdt() { initIdt(); }
 
 void kalInitPhysicalMemoryManager(size_t memSizeInMb) { initPhysicalMemoryManager(memSizeInMb); }
 
+void kalMarkRangeUsed(physical_addr_t address, size_t size) { markRangeUsed(address, size); }
+
 void kalInitVirtualMemoryManager() { initVirtualMemoryManager(); }
 
 void kalThreadSetupStack(Thread* t) {
     uint32_t* stackPointer = (uint32_t*) t->stackPointer;
     stackPointer -= 5;
 
-    stackPointer[0] = (uint32_t) t->entryPoint; // This will be popped as EIP by ret
-    stackPointer[1] = 0; // EBP
-    stackPointer[2] = 0; // EBX
-    stackPointer[3] = 0; // ESI
-    stackPointer[4] = 0;
+    stackPointer[0] = 0;
+    stackPointer[1] = 0;
+    stackPointer[2] = 0;
+    stackPointer[3] = 0;
+    stackPointer[4] = (uint32_t) threadTrampoline;
 
     t->stackPointer = (void*) stackPointer;
 }

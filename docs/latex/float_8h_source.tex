@@ -1,0 +1,50 @@
+\doxysection{float.\+h}
+\hypertarget{float_8h_source}{}\label{float_8h_source}\index{libc/include/float.h@{libc/include/float.h}}
+\doxymbox{\hyperlink{float_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ dylan\ on\ 15/07/2026.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_MATH\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BLU\_OS\_MATH\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ FLT\_RADIX\ 2}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLT\_MANT\_DIG\ 24}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ DBL\_MANT\_DIG\ 53}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//TODO\ finish\ float.h}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#if\ defined(\_\_LDBL\_MANT\_DIG\_\_)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \#define\ LDBL\_MANT\_DIG\ \_\_LDBL\_MANT\_DIG\_\_}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_\_aarch64\_\_)\ ||\ defined(\_\_arm64\_\_)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LDBL\_MANT\_DIG\ 53}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined(\_\_x86\_64\_\_)\ ||\ defined(\_M\_X64)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LDBL\_MANT\_DIG\ 64}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LDBL\_MANT\_DIG\ 53}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ LDBL\_MANT\_DIG\ >=\ 64}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \#define\ DECIMAL\_DIG\ 21}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#elif\ LDBL\_MANT\_DIG\ >=\ 53}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \#define\ DECIMAL\_DIG\ 17}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#elif\ LDBL\_MANT\_DIG\ >=\ 24}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \ \ \ \#define\ DECIMAL\_DIG\ 9}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \#define\ DECIMAL\_DIG\ 21}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLU\_OS\_MATH\_H}}
+
+\end{DoxyCode}

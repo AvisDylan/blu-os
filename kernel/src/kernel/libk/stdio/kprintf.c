@@ -2,13 +2,13 @@
 // Created by dylan on 19/07/2026.
 //
 
-#include <limits.h>
 #include <kernel/libk/stdio.h>
+#include <limits.h>
 #include <stdarg.h>
-#include <stddef.h>
 #include <stdbool.h>
-#include <stdio.h>
+#include <stddef.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <string.h>
 
 static bool print(const char* data, size_t length) {
@@ -114,6 +114,79 @@ int kprintf(const char* restrict format, ...) {
                         value >>= 4;
                     }
                 }
+
+                for (size_t i = 0; i < length / 2; i++) {
+                    char tmp = buffer[i];
+                    buffer[i] = buffer[length - 1 - i];
+                    buffer[length - 1 - i] = tmp;
+                }
+
+                if (maxRem < length) {
+
+                    return -1;
+                }
+
+                if (!print(buffer, length))
+                    return -1;
+
+                written += length;
+                break;
+            }
+            case 'u': {
+                format++;
+
+                uint32_t value = va_arg(parameters, uint32_t);
+
+                char buffer[10];
+                size_t length = 0;
+
+                if (value == 0)
+                    buffer[length++] = '0';
+                else {
+                    while (value != 0) {
+                        buffer[length++] = '0' + (value % 10);
+                        value /= 10;
+                    }
+                }
+
+                for (size_t i = 0; i < length / 2; i++) {
+                    char tmp = buffer[i];
+                    buffer[i] = buffer[length - 1 - i];
+                    buffer[length - 1 - i] = tmp;
+                }
+
+                if (maxRem < length) {
+
+                    return -1;
+                }
+
+                if (!print(buffer, length))
+                    return -1;
+
+                written += length;
+                break;
+            }
+            case 'i':
+            case 'd': {
+                format++;
+
+                int32_t value = va_arg(parameters, int32_t);
+
+                char buffer[11];
+                size_t length = 0;
+                bool negative = value < 0;
+
+                if (value == 0)
+                    buffer[length++] = '0';
+                else {
+                    while (value != 0) {
+                        buffer[length++] = '0' + (value % 10);
+                        value /= 10;
+                    }
+                }
+
+                if (negative)
+                    buffer[length++] = '-';
 
                 for (size_t i = 0; i < length / 2; i++) {
                     char tmp = buffer[i];

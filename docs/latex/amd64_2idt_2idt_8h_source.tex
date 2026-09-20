@@ -1,0 +1,45 @@
+\doxysection{idt.\+h}
+\hypertarget{amd64_2idt_2idt_8h_source}{}\label{amd64_2idt_2idt_8h_source}\index{kernel/include/arch/x86/amd64/idt/idt.h@{kernel/include/arch/x86/amd64/idt/idt.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ dylan\ on\ 10/07/2026.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_IDT\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BLU\_OS\_IDT\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IDT\_MAX\_DESCRIPTORS\ 256}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00012\ \ \ \ \ uint16\_t\ isrLow;}
+\DoxyCodeLine{00013\ \ \ \ \ uint16\_t\ kernelCs;}
+\DoxyCodeLine{00014\ \ \ \ \ uint8\_t\ ist;}
+\DoxyCodeLine{00015\ \ \ \ \ uint8\_t\ attributes;}
+\DoxyCodeLine{00016\ \ \ \ \ uint16\_t\ isrMid;}
+\DoxyCodeLine{00017\ \ \ \ \ uint32\_t\ isrHigh;}
+\DoxyCodeLine{00018\ \ \ \ \ uint32\_t\ reserved;}
+\DoxyCodeLine{00019\ \}\ \doxymbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ IDTEntry;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00022\ \ \ \ \ uint16\_t\ limit;}
+\DoxyCodeLine{00023\ \ \ \ \ uint64\_t\ base;}
+\DoxyCodeLine{00024\ \}\ \doxymbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ IDTR;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ isrStubTable[];}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ irqStubTable[];}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \doxymbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((noreturn))}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ exceptionHandler(uint64\_t\ vector,\ uint64\_t\ errorCode);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ irqHandler(uint64\_t\ vector,\ uint64\_t\ errorCode);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ idtSetDescriptor(uint8\_t\ vector,\ \textcolor{keywordtype}{void}*\ isr,\ uint8\_t\ flags);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ initIdt();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLU\_OS\_IDT\_H}}
+
+\end{DoxyCode}

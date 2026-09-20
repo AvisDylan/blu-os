@@ -1,0 +1,92 @@
+\doxysection{kernel/\+include/\+kernel/\+scheduler/\+scheduler.h File Reference}
+\hypertarget{scheduler_8h}{}\label{scheduler_8h}\index{kernel/include/kernel/scheduler/scheduler.h@{kernel/include/kernel/scheduler/scheduler.h}}
+{\ttfamily \+\#include $<$kernel/\+thread/\+thread.\+h$>$}\newline
+Include dependency graph for scheduler.\+h:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{scheduler_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{scheduler_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{scheduler_8h_af08ae3a41511be2118bef1cb79e52adc}{scheduler\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes scheduler. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{scheduler_8h_ac59f08cd5db6c1f230cda84c78105722}{scheduler\+Add\+Thread}} (Thread \texorpdfstring{$\ast$}{*}\doxymbox{\hyperlink{structthread}{thread}})
+\begin{DoxyCompactList}\small\item\em Adds thread to scheduler queue. \end{DoxyCompactList}\item 
+\Hypertarget{scheduler_8h_ad19bced4437eef33750ca466ed21ef3c}\label{scheduler_8h_ad19bced4437eef33750ca466ed21ef3c} 
+void {\bfseries scheduler\+Yield} (void)
+\item 
+\Hypertarget{scheduler_8h_ab58cba32291e0bc0d0e5db59f4062d01}\label{scheduler_8h_ab58cba32291e0bc0d0e5db59f4062d01} 
+void {\bfseries scheduler\+Exit\+Current} (void)
+\item 
+\Hypertarget{scheduler_8h_a163b4d5188698552960f3caf1d8fa6a5}\label{scheduler_8h_a163b4d5188698552960f3caf1d8fa6a5} 
+void {\bfseries thread\+Trampoline} (void)
+\item 
+Thread \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{scheduler_8h_a93bdc803b8c8665da6a0d578ad183320}{get\+Current\+Thread}} (void)
+\begin{DoxyCompactList}\small\item\em Returns current thread of scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Avis 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{scheduler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{scheduler_8h_a93bdc803b8c8665da6a0d578ad183320}\index{scheduler.h@{scheduler.h}!getCurrentThread@{getCurrentThread}}
+\index{getCurrentThread@{getCurrentThread}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{getCurrentThread()}{getCurrentThread()}}
+{\footnotesize\ttfamily \label{scheduler_8h_a93bdc803b8c8665da6a0d578ad183320} 
+Thread \texorpdfstring{$\ast$}{*} get\+Current\+Thread (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns current thread of scheduler. 
+
+\begin{DoxyAuthor}{Author}
+Avis
+\end{DoxyAuthor}
+
+
+\begin{DoxyReturn}{Returns}
+Pointer to current thread 
+\end{DoxyReturn}
+\Hypertarget{scheduler_8h_ac59f08cd5db6c1f230cda84c78105722}\index{scheduler.h@{scheduler.h}!schedulerAddThread@{schedulerAddThread}}
+\index{schedulerAddThread@{schedulerAddThread}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{schedulerAddThread()}{schedulerAddThread()}}
+{\footnotesize\ttfamily \label{scheduler_8h_ac59f08cd5db6c1f230cda84c78105722} 
+void scheduler\+Add\+Thread (\begin{DoxyParamCaption}\item[{Thread \texorpdfstring{$\ast$}{*}}]{thread}{}\end{DoxyParamCaption})}
+
+
+
+Adds thread to scheduler queue. 
+
+\begin{DoxyAuthor}{Author}
+Avis 
+\end{DoxyAuthor}
+\Hypertarget{scheduler_8h_af08ae3a41511be2118bef1cb79e52adc}\index{scheduler.h@{scheduler.h}!schedulerInit@{schedulerInit}}
+\index{schedulerInit@{schedulerInit}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{schedulerInit()}{schedulerInit()}}
+{\footnotesize\ttfamily \label{scheduler_8h_af08ae3a41511be2118bef1cb79e52adc} 
+void scheduler\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes scheduler. 
+
+\begin{DoxyAuthor}{Author}
+Avis 
+\end{DoxyAuthor}

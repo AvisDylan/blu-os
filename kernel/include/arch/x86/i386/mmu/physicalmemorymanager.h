@@ -5,8 +5,8 @@
 #ifndef BLU_OS_PHYSICALMEMORYMANAGER_H
 #define BLU_OS_PHYSICALMEMORYMANAGER_H
 
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 
 #define KERNEL_VMA 0xC0000000
 
@@ -25,4 +25,6 @@ physical_addr_t kallocFrame();
 
 void kfreeFrame(physical_addr_t frameAddress);
 
-#endif //BLU_OS_PHYSICALMEMORYMANAGER_H
+void markRangeUsed(physical_addr_t address, size_t length);
+
+#endif // BLU_OS_PHYSICALMEMORYMANAGER_H

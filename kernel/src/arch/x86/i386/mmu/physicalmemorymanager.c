@@ -72,3 +72,21 @@ void kfreeFrame(physical_addr_t frameAddress) {
     if (index < totalPages)
         frameMap[index] = FREE;
 }
+
+void markRangeUsed(physical_addr_t address, size_t length) {
+    if (address + length <= startFrame)
+        return;
+
+    physical_addr_t start = (address < startFrame) ? startFrame : address;
+    physical_addr_t end = address + length;
+
+    uint32_t startIndex = (start - startFrame) / PAGE_SIZE;
+    uint32_t endIndex = (end - startFrame + PAGE_SIZE - 1) / PAGE_SIZE;
+
+    if (endIndex > totalPages)
+        endIndex = totalPages;
+
+    for (uint32_t i = startIndex; i < endIndex; i++) {
+        frameMap[i] = USED;
+    }
+}

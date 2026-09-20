@@ -19,7 +19,7 @@
 - [-] Add protected mode heap
 - [ ] Add long mode heap
 - [x] Add threading
-- [ ] Add scheduler
+- [x] Add scheduler
 - [x] Pass multi boot info in i386
 - [-] Pass multi boot info in amd64
 - [ ] Add local APIC
@@ -47,5 +47,6 @@
 - [ ] Add BIOS VBE
 - [ ] Add UEFI
 - [ ] Add UEFI Video
+- [ ] Add KMS
 - [ ] Add desktop enviroment
 - [ ] Add apps

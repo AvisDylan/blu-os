@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['to_20build_0',['How to build',['../index.html#autotoc_md7',1,'']]]
+  ['scripts_3a_0',['scripts:',['../index.html#autotoc_md7',1,'Build scripts:'],['../index.html#autotoc_md8',1,'ISO scripts:']]]
 ];
