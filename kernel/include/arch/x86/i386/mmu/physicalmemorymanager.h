@@ -27,4 +27,5 @@ void kfreeFrame(physical_addr_t frameAddress);
 
 void markRangeUsed(physical_addr_t address, size_t length);
 
+
 #endif // BLU_OS_PHYSICALMEMORYMANAGER_H

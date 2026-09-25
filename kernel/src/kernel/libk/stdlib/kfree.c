@@ -2,9 +2,10 @@
 // Created by dylan on 19/07/2026.
 //
 
-#include <kernel/libk/stdlib.h>
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
+#include <kernel/libk/stdlib.h>
 #include <kernel/mm/heap.h>
+#include "kernel/libk/panic.h"
 
 /**
  * @brief Free kernel heap memory allocations
@@ -20,10 +21,14 @@ void kfree(void* ptr) {
     KmallocHeader* kmallocHeader = ((KmallocHeader*) ptr) - 1;
     size_t size = kmallocHeader->size;
 
-    if (size <= PAGE_SIZE) {
-        slabFree(kmallocHeader);
-        return;
-    }
+    if (kmallocHeader->flags & HEAP_FREED || !(kmallocHeader->flags & HEAP_ALLOCATED))
+        panic("Tried to double free or free non-allocated memory");
 
-    //TODO add page freeing
+    switch (kmallocHeader->type) {
+        case SLAB:
+            slabFree(kmallocHeader);
+            break;
+        case PAGE:
+            break;
+    }
 }

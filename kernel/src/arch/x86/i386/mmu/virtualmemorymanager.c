@@ -2,9 +2,9 @@
 // Created by dylan on 14/07/2026.
 //
 
+#include <arch/x86/i386/mmu/paging.h>
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
 #include <arch/x86/i386/mmu/virtualmemorymanager.h>
-#include <arch/x86/i386/mmu/paging.h>
 
 #include "stdio.h"
 
@@ -47,7 +47,7 @@ void mapPage(uint32_t virtualAddress, uint32_t physicalAddress, uint32_t flags) 
 
         uint32_t ptVirtualAddress = 0xFFC00000 + (pdIndex * 0x1000);
 
-        asm volatile("invlpg (%0)" :: "r"(ptVirtualAddress) : "memory");
+        asm volatile("invlpg (%0)" ::"r"(ptVirtualAddress) : "memory");
 
         uint32_t* newPageTable = (uint32_t*) ptVirtualAddress;
 
@@ -60,5 +60,42 @@ void mapPage(uint32_t virtualAddress, uint32_t physicalAddress, uint32_t flags) 
 
     pageTable[ptIndex] = (physicalAddress & ~0xFFF) | PAGE_PRESENT | flags;
 
-    asm volatile("invlpg (%0)" :: "r"(virtualAddress) : "memory");
+    asm volatile("invlpg (%0)" ::"r"(virtualAddress) : "memory");
+}
+
+void unmapPage(uint32_t virtualAddress) {
+    uint32_t pdIndex = virtualAddress >> 22;
+    uint32_t ptIndex = (virtualAddress >> 12) & 0x3ff;
+
+    uint32_t* virtPageDir = (uint32_t*) 0xFFFFF000;
+
+    if ((virtPageDir[pdIndex] & PAGE_PRESENT) == 0)
+        return;
+
+    uint32_t* pageTable = (uint32_t*) (0xFFC00000 + (pdIndex * 0x1000));
+
+    pageTable[ptIndex] = 0;
+
+    asm volatile("invlpg (%0)" ::"r"(virtualAddress) : "memory");
+}
+
+physical_addr_t getPhysicalAddress(uint32_t virtualAddress) {
+    uint32_t pdIndex = virtualAddress >> 22;
+    uint32_t ptIndex = (virtualAddress >> 12) & 0x3FF;
+
+    uint32_t* pageDirectory = (uint32_t*) 0xFFFFF000;
+
+    if (!(pageDirectory[pdIndex] & PAGE_PRESENT))
+        return 0;
+
+    uint32_t* pageTable = (uint32_t*) (0xFFC00000 + (pdIndex * PAGE_SIZE));
+
+    if (!(pageTable[ptIndex] & PAGE_PRESENT))
+        return 0;
+
+    uint32_t frame = pageTable[ptIndex] & ~0xFFF;
+
+    uint32_t offset = virtualAddress & 0xFFF;
+
+    return frame + offset;
 }

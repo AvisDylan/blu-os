@@ -5,15 +5,22 @@
 #ifndef BLU_OS_HEAP_H
 #define BLU_OS_HEAP_H
 
-#include <stddef.h>
 #include <kernel/mm/slab.h>
+#include <stddef.h>
+#include <stdint.h>
 
-//TODO add arch agnostic macros
+// TODO add arch agnostic macros
 #define KERNEL_HEAP_START 0xC1000000
 #define KERNEL_HEAP_END 0xC2000000
 
+typedef enum : uint32_t { SLAB, PAGE } KmallocAllocationType;
+
+typedef enum : uint32_t { HEAP_ALLOCATED = 1 << 0, HEAP_FREED = 1 << 1 } KmallocFlags;
+
 typedef struct {
     size_t size;
+    uint32_t type;
+    uint32_t flags;
 } KmallocHeader;
 
 extern KernelMemoryCache cache8;
@@ -35,4 +42,6 @@ void heapInit();
 
 void* allocPages(size_t numPages);
 
-#endif //BLU_OS_HEAP_H
+void freePages(void* ptr, size_t pages);
+
+#endif // BLU_OS_HEAP_H

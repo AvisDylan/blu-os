@@ -16,7 +16,7 @@
 - [ ] Add long mode virtual memory manager
 - [ ] Add long mode paging
 - [x] Split libk and libc
-- [-] Add protected mode heap
+- [x] Add protected mode heap
 - [ ] Add long mode heap
 - [x] Add threading
 - [x] Add scheduler

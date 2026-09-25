@@ -5,6 +5,7 @@
 #ifndef BLU_OS_VIRTUALMEMORYMANAGER_H
 #define BLU_OS_VIRTUALMEMORYMANAGER_H
 
+#include <arch/x86/i386/mmu/physicalmemorymanager.h>
 #include <stdint.h>
 
 #define PAGE_PRESENT 0x1
@@ -15,4 +16,8 @@ void initVirtualMemoryManager();
 
 void mapPage(uint32_t virtualAddress, uint32_t physicalAddress, uint32_t flags);
 
-#endif //BLU_OS_VIRTUALMEMORYMANAGER_H
+void unmapPage(uint32_t virtualAddress);
+
+physical_addr_t getPhysicalAddress(uint32_t virtualAddress);
+
+#endif // BLU_OS_VIRTUALMEMORYMANAGER_H

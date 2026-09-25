@@ -2,11 +2,11 @@
 // Created by dylan on 19/07/2026.
 //
 
-#include <kernel/mm/heap.h>
-#include <stdint.h>
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
 #include <arch/x86/i386/mmu/virtualmemorymanager.h>
+#include <kernel/mm/heap.h>
 #include <kernel/mm/slab.h>
+#include <stdint.h>
 
 static uint32_t heapNext = KERNEL_HEAP_START;
 
@@ -50,6 +50,19 @@ void* allocPages(size_t numPages) {
     heapNext += size;
 
     return (void*) base;
+}
+
+void freePages(void* ptr, size_t pages) {
+    uint32_t address = (uint32_t) ptr;
+
+    for (size_t i = 0; i < pages; i++) {
+        uint32_t virtualAddress = address + i * PAGE_SIZE;
+
+        physical_addr_t physicalAddress = getPhysicalAddress(virtualAddress);
+
+        kfreeFrame(physicalAddress);
+        unmapPage(virtualAddress);
+    }
 }
 
 void* slabAlloc(size_t size) {
@@ -98,4 +111,3 @@ void slabFree(void* ptr) {
     cacheFree(&cache2048, ptr);
     cacheFree(&cache4096, ptr);
 }
-

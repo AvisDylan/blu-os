@@ -3,6 +3,7 @@
 //
 
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
+#include <stdint.h>
 #include <stdio.h>
 
 static uint8_t* frameMap;

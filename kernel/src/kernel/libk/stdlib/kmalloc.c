@@ -2,10 +2,10 @@
 // Created by dylan on 19/07/2026.
 //
 
-#include <kernel/libk/stdlib.h>
-#include <kernel/mm/slab.h>
-#include <kernel/mm/heap.h>
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
+#include <kernel/libk/stdlib.h>
+#include <kernel/mm/heap.h>
+#include <kernel/mm/slab.h>
 
 /**
  * @brief Kernel heap memory allocator.
@@ -27,6 +27,8 @@ void* kmalloc(size_t size) {
         KmallocHeader* kmallocHeader = (KmallocHeader*) memory;
 
         kmallocHeader->size = total;
+        kmallocHeader->type = SLAB;
+        kmallocHeader->flags = HEAP_ALLOCATED;
 
         return (void*) (kmallocHeader + 1);
     }
@@ -41,7 +43,8 @@ void* kmalloc(size_t size) {
     KmallocHeader* kmallocHeader = (KmallocHeader*) memory;
 
     kmallocHeader->size = pages * PAGE_SIZE;
+    kmallocHeader->type = PAGE;
+    kmallocHeader->flags = HEAP_ALLOCATED;
 
     return (void*) (kmallocHeader + 1);
 }
-
