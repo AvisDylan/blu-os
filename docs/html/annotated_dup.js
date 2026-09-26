@@ -5,6 +5,7 @@ var annotated_dup =
     [ "GDT", "structGDT.html", null ],
     [ "KernelMemoryCache", "structKernelMemoryCache.html", null ],
     [ "KmallocHeader", "structKmallocHeader.html", null ],
+    [ "RtcTime", "structRtcTime.html", null ],
     [ "slab", "structslab.html", null ],
     [ "TerminalBackend", "structTerminalBackend.html", null ],
     [ "thread", "structthread.html", null ]

@@ -41,6 +41,8 @@ set(KERNEL_I386_SOURCES
         src/arch/x86/i386/mmu/virtualmemorymanager.c
         src/arch/x86/i386/kal.c
         src/arch/x86/i386/thread/threadswitch.s
+        src/arch/x86/i386/pit/pit.c
+        src/arch/x86/i386/rtc/rtc.c
 )
 
 set(KERNEL_AMD64_SOURCES

@@ -24,7 +24,7 @@
 - [-] Pass multi boot info in amd64
 - [ ] Add local APIC
 - [ ] Write driver for IOAPIC
-- [ ] Add timers
+- [x] Add timers
 - [ ] Add multiprocessing
 - [ ] Add elf loader
 - [ ] Add syscalls

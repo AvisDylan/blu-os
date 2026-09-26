@@ -1,0 +1,21 @@
+\doxysection{rtc.\+h}
+\hypertarget{rtc_8h_source}{}\label{rtc_8h_source}\index{kernel/include/arch/x86/i386/rtc/rtc.h@{kernel/include/arch/x86/i386/rtc/rtc.h}}
+\doxymbox{\hyperlink{rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_RTC\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ BLU\_OS\_RTC\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ uint16\_t\ year;}
+\DoxyCodeLine{00016\ \ \ \ \ uint8\_t\ month,\ day,\ hour,\ minute,\ second;}
+\DoxyCodeLine{00017\ \}\ \doxymbox{\hyperlink{structRtcTime}{RtcTime}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ uint64\_t\ rtcReadUnixTime(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

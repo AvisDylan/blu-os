@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "_bcdfghiklmpstv",
-  1: "_fgkst",
-  2: "flmstv",
+  0: "_bcdfghiklmprstv",
+  1: "_fgkrst",
+  2: "flmprstv",
   3: "gps",
   4: "bcdghilst"
 };

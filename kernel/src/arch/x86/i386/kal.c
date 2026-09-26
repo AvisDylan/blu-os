@@ -9,6 +9,11 @@
 #include <kernel/scheduler/scheduler.h>
 #include <kernel/thread/thread.h>
 #include <stddef.h>
+#include <stdint.h>
+#include "arch/x86/i386/pit/pit.h"
+#include "arch/x86/i386/rtc/rtc.h"
+
+static uint64_t bootUnixTime = 0;
 
 void kalInitGdt() { initGdt(); }
 
@@ -32,3 +37,11 @@ void kalThreadSetupStack(Thread* t) {
 
     t->stackPointer = (void*) stackPointer;
 }
+
+
+void kalInitTimer(uint32_t freqHz) {
+    bootUnixTime = rtcReadUnixTime();
+    pitInit(freqHz);
+}
+
+uint64_t timerWallClockUnixMs(void) { return bootUnixTime * 1000ULL + timerGetMs(); }

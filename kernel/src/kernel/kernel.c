@@ -7,9 +7,9 @@
 #include <kernel/libk/stdlib.h>
 #include <kernel/mm/heap.h>
 #include <kernel/scheduler/scheduler.h>
+#include <kernel/thread/thread.h>
 #include <kernel/tty/tty.h>
 #include <stdint.h>
-#include "kernel/thread/thread.h"
 
 int thread1() {
     kprintf("Thread 1a\n");
@@ -39,6 +39,8 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
     kalInitGdt();
 
     kalInitIdt();
+
+    kalInitTimer(1000);
 
     uint32_t highestUsableAddress = 0;
 
@@ -107,6 +109,16 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
 
     kprintf("Hello, World!\n");
 
+    uint64_t lastPrint = -1;
+
     for (;;) {
+        uint64_t currentTimeSecond = timerWallClockUnixMs() / 1000;
+
+        if (currentTimeSecond != lastPrint) {
+            kprintf("Time: %us\n", currentTimeSecond);
+            lastPrint = currentTimeSecond;
+        }
+
+        asm volatile("hlt");
     }
 }
