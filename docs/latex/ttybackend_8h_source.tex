@@ -1,0 +1,23 @@
+\doxysection{ttybackend.\+h}
+\hypertarget{ttybackend_8h_source}{}\label{ttybackend_8h_source}\index{kernel/include/kernel/tty/ttybackend.h@{kernel/include/kernel/tty/ttybackend.h}}
+\doxymbox{\hyperlink{ttybackend_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_TTYBACKEND\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ BLU\_OS\_TTYBACKEND\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stddef_8h}{stddef.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00016\ \ \ \ \ void\ (*putEntryAt)(\textcolor{keywordtype}{size\_t}\ column,\ \textcolor{keywordtype}{size\_t}\ row,\ \textcolor{keywordtype}{char}\ c,\ uint8\_t\ color);}
+\DoxyCodeLine{00017\ \ \ \ \ void\ (*scroll)(uint8\_t\ color);}
+\DoxyCodeLine{00018\ \ \ \ \ void\ (*clear)(uint8\_t\ color);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ columns;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ rows;}
+\DoxyCodeLine{00021\ \}\ \doxymbox{\hyperlink{structTerminalBackend}{TerminalBackend}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

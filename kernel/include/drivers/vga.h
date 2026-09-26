@@ -11,6 +11,12 @@
 #define VGA_WIDTH 80
 #define VGA_HEIGHT 25
 
+#ifdef __x86_64__
+#define VGA_MEMORY 0xFFFFFFFF800B8000
+#else
+#define VGA_MEMORY 0xb8000
+#endif
+
 enum VGAColor {
     VGA_COLOR_BLACK = 0,
     VGA_COLOR_BLUE = 1,
@@ -34,4 +40,4 @@ uint8_t vgaEntryColor(enum VGAColor fg, enum VGAColor bg);
 
 uint16_t vgaEntry(uint8_t uc, uint8_t color);
 
-#endif //BLU_OS_VGA_H
+#endif // BLU_OS_VGA_H

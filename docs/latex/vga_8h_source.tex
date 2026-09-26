@@ -15,29 +15,35 @@
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ VGA\_WIDTH\ 80}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ VGA\_HEIGHT\ 25}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{enum}\ VGAColor\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ VGA\_COLOR\_BLACK\ =\ 0,}
-\DoxyCodeLine{00016\ \ \ \ \ VGA\_COLOR\_BLUE\ =\ 1,}
-\DoxyCodeLine{00017\ \ \ \ \ VGA\_COLOR\_GREEN\ =\ 2,}
-\DoxyCodeLine{00018\ \ \ \ \ VGA\_COLOR\_CYAN\ =\ 3,}
-\DoxyCodeLine{00019\ \ \ \ \ VGA\_COLOR\_RED\ =\ 4,}
-\DoxyCodeLine{00020\ \ \ \ \ VGA\_COLOR\_MAGENTA\ =\ 5,}
-\DoxyCodeLine{00021\ \ \ \ \ VGA\_COLOR\_BROWN\ =\ 6,}
-\DoxyCodeLine{00022\ \ \ \ \ VGA\_COLOR\_LIGHT\_GREY\ =\ 7,}
-\DoxyCodeLine{00023\ \ \ \ \ VGA\_COLOR\_DARK\_GREY\ =\ 8,}
-\DoxyCodeLine{00024\ \ \ \ \ VGA\_COLOR\_LIGHT\_BLUE\ =\ 9,}
-\DoxyCodeLine{00025\ \ \ \ \ VGA\_COLOR\_LIGHT\_GREEN\ =\ 10,}
-\DoxyCodeLine{00026\ \ \ \ \ VGA\_COLOR\_LIGHT\_CYAN\ =\ 11,}
-\DoxyCodeLine{00027\ \ \ \ \ VGA\_COLOR\_LIGHT\_RED\ =\ 12,}
-\DoxyCodeLine{00028\ \ \ \ \ VGA\_COLOR\_LIGHT\_MAGENTA\ =\ 13,}
-\DoxyCodeLine{00029\ \ \ \ \ VGA\_COLOR\_LIGHT\_BROWN\ =\ 14,}
-\DoxyCodeLine{00030\ \ \ \ \ VGA\_COLOR\_WHITE\ =\ 15}
-\DoxyCodeLine{00031\ \};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ uint8\_t\ vgaEntryColor(\textcolor{keyword}{enum}\ VGAColor\ fg,\ \textcolor{keyword}{enum}\ VGAColor\ bg);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ uint16\_t\ vgaEntry(uint8\_t\ uc,\ uint8\_t\ color);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLU\_OS\_VGA\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_\_x86\_64\_\_}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ VGA\_MEMORY\ 0xFFFFFFFF800B8000}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ VGA\_MEMORY\ 0xb8000}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{enum}\ VGAColor\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ VGA\_COLOR\_BLACK\ =\ 0,}
+\DoxyCodeLine{00022\ \ \ \ \ VGA\_COLOR\_BLUE\ =\ 1,}
+\DoxyCodeLine{00023\ \ \ \ \ VGA\_COLOR\_GREEN\ =\ 2,}
+\DoxyCodeLine{00024\ \ \ \ \ VGA\_COLOR\_CYAN\ =\ 3,}
+\DoxyCodeLine{00025\ \ \ \ \ VGA\_COLOR\_RED\ =\ 4,}
+\DoxyCodeLine{00026\ \ \ \ \ VGA\_COLOR\_MAGENTA\ =\ 5,}
+\DoxyCodeLine{00027\ \ \ \ \ VGA\_COLOR\_BROWN\ =\ 6,}
+\DoxyCodeLine{00028\ \ \ \ \ VGA\_COLOR\_LIGHT\_GREY\ =\ 7,}
+\DoxyCodeLine{00029\ \ \ \ \ VGA\_COLOR\_DARK\_GREY\ =\ 8,}
+\DoxyCodeLine{00030\ \ \ \ \ VGA\_COLOR\_LIGHT\_BLUE\ =\ 9,}
+\DoxyCodeLine{00031\ \ \ \ \ VGA\_COLOR\_LIGHT\_GREEN\ =\ 10,}
+\DoxyCodeLine{00032\ \ \ \ \ VGA\_COLOR\_LIGHT\_CYAN\ =\ 11,}
+\DoxyCodeLine{00033\ \ \ \ \ VGA\_COLOR\_LIGHT\_RED\ =\ 12,}
+\DoxyCodeLine{00034\ \ \ \ \ VGA\_COLOR\_LIGHT\_MAGENTA\ =\ 13,}
+\DoxyCodeLine{00035\ \ \ \ \ VGA\_COLOR\_LIGHT\_BROWN\ =\ 14,}
+\DoxyCodeLine{00036\ \ \ \ \ VGA\_COLOR\_WHITE\ =\ 15}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ uint8\_t\ vgaEntryColor(\textcolor{keyword}{enum}\ VGAColor\ fg,\ \textcolor{keyword}{enum}\ VGAColor\ bg);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ uint16\_t\ vgaEntry(uint8\_t\ uc,\ uint8\_t\ color);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BLU\_OS\_VGA\_H}}
 
 \end{DoxyCode}

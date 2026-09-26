@@ -9,4 +9,8 @@
 
 size_t strlen(const char* str);
 
-#endif //BLU_OS_STRING_H
+void* memset(void* dst, int value, size_t count);
+
+void* memmove(void* dst, const void* src, size_t count);
+
+#endif // BLU_OS_STRING_H

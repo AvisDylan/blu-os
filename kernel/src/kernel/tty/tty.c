@@ -2,66 +2,52 @@
 // Created by dylan on 08/07/2026.
 //
 
+#include <drivers/framebuffer.h>
+#include <drivers/vga.h>
+#include <kernel/tty/tty.h>
 #include <stddef.h>
 #include <stdint.h>
-#include <kernel/tty/tty.h>
-#include <drivers/vga.h>
+#include "arch/x86/boot/multiboot.h"
+#include "kernel/tty/framebufferbackend.h"
+#include "kernel/tty/vgabackend.h"
 
+static TerminalBackend backend;
 static size_t terminalRow;
 static size_t terminalColumn;
 static uint8_t terminalColor;
-static uint16_t* terminalBuffer = (uint16_t*) VGA_MEMORY;
 
-void terminalInit() {
+void terminalInit(MultibootInfo* multiboot) {
+    static Framebuffer framebuffer;
+
+    if (multiboot->flags & MULTIBOOT_INFO_FRAMEBUFFER)
+        framebufferInit(multiboot, &framebuffer);
+
+    if (framebuffer.address)
+        framebufferBackendGet(&framebuffer, &backend);
+    else
+        vgaBackendGet(&backend);
+
     terminalRow = 0;
     terminalColumn = 0;
     terminalColor = vgaEntryColor(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
 
-    for (size_t y = 0; y < VGA_HEIGHT; y++) {
-        for (size_t x = 0; x < VGA_WIDTH; x++) {
-            const size_t index = y * VGA_WIDTH + x;
-
-            terminalBuffer[index] = vgaEntry(' ', terminalColor);
-        }
-    }
+    backend.clear(terminalColor);
 }
 
-void terminalSetColor(uint8_t color) {
-    terminalColor = color;
-}
+void terminalSetColor(uint8_t color) { terminalColor = color; }
 
-void terminalPutEntryAt(char c, uint8_t color, size_t x, size_t y) {
-    const size_t index = y * VGA_WIDTH + x;
+static void mewLine(void) {
+    terminalColumn = 0;
 
-    terminalBuffer[index] = vgaEntry(c, color);
-}
-
-void terminalScroll() {
-    for (size_t y = 1; y < VGA_HEIGHT; y++) {
-        for (size_t x = 0; x < VGA_WIDTH; x++) {
-            const size_t srcIndex = y * VGA_WIDTH + x;
-            const size_t dstIndex = (y - 1) * VGA_WIDTH + x;
-
-            terminalBuffer[dstIndex] = terminalBuffer[srcIndex];
-        }
-    }
-
-    size_t lastRowIndex = (VGA_HEIGHT - 1) * VGA_WIDTH;
-
-    for (size_t x = 0; x < VGA_WIDTH; x++) {
-        terminalBuffer[lastRowIndex + x] = vgaEntry(' ', terminalColor);
+    if (++terminalRow == backend.rows) {
+        backend.scroll(terminalColor);
+        terminalRow = backend.rows - 1;
     }
 }
 
 void terminalPutChar(char c) {
     if (c == '\n') {
-        terminalColumn = 0;
-
-        if (++terminalRow == VGA_HEIGHT) {
-            terminalScroll();
-            terminalRow = VGA_HEIGHT - 1;
-        }
-
+        mewLine();
         return;
     }
 
@@ -73,27 +59,16 @@ void terminalPutChar(char c) {
     if (c == '\t') {
         terminalColumn = (terminalColumn + 4) & ~3;
 
-        if (terminalColumn >= VGA_WIDTH) {
-            terminalColumn = 0;
+        if (terminalColumn >= backend.columns)
+            mewLine();
 
-            if (++terminalRow == VGA_HEIGHT) {
-                terminalScroll();
-                terminalRow = VGA_HEIGHT - 1;
-            }
-        }
         return;
     }
 
-    terminalPutEntryAt(c, terminalColor, terminalColumn, terminalRow);
+    backend.putEntryAt(terminalColumn, terminalRow, c, terminalColor);
 
-    if (++terminalColumn == VGA_WIDTH) {
-        terminalColumn = 0;
-
-        if (++terminalRow == VGA_HEIGHT) {
-            terminalScroll();
-            terminalRow = VGA_HEIGHT - 1;
-        }
-    }
+    if (++terminalColumn == backend.columns)
+        mewLine();
 }
 
 void terminalWrite(const char* data, size_t size) {
@@ -101,3 +76,4 @@ void terminalWrite(const char* data, size_t size) {
         terminalPutChar(data[i]);
     }
 }
+

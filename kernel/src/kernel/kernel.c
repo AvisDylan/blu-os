@@ -2,13 +2,13 @@
 
 #include <arch/kal.h>
 #include <arch/x86/boot/multiboot.h>
+#include <arch/x86/i386/mmu/physicalmemorymanager.h>
 #include <kernel/libk/stdio.h>
 #include <kernel/libk/stdlib.h>
 #include <kernel/mm/heap.h>
+#include <kernel/scheduler/scheduler.h>
 #include <kernel/tty/tty.h>
 #include <stdint.h>
-#include "arch/x86/i386/mmu/physicalmemorymanager.h"
-#include "kernel/scheduler/scheduler.h"
 #include "kernel/thread/thread.h"
 
 int thread1() {
@@ -36,14 +36,9 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
 
     MultibootInfo* multiBootInfo = (MultibootInfo*) mbiAddress;
 
-    terminalInit();
-    kprintf("Successfully initialized terminal\n");
-
     kalInitGdt();
-    kprintf("Successfully initialized gdt\n");
 
     kalInitIdt();
-    kprintf("Successfully initialized idt\n");
 
     uint32_t highestUsableAddress = 0;
 
@@ -69,7 +64,6 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
     uint32_t memSizeInMb = highestUsableAddress / (1024 * 1024);
 
     kalInitPhysicalMemoryManager(memSizeInMb);
-    kprintf("Successfully initialized physical memory manager with %u mb of memory\n");
 
     if (multiBootInfo->flags & MULTIBOOT_INFO_MEM_MAP) {
         uint8_t* memoryMapPtr = (uint8_t*) multiBootInfo->mmapAddr;
@@ -86,7 +80,13 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
     }
 
     kalInitVirtualMemoryManager();
-    kprintf("Successfully initialized virtual memory manager\n");
+
+    terminalInit(multiBootInfo);
+
+    if (multiBootInfo->flags & MULTIBOOT_INFO_FRAMEBUFFER) {
+        kprintf("Multiboot framebuffer info: type=%u, %ux%u @%ubpp\n", multiBootInfo->framebufferType,
+                multiBootInfo->framebufferWidth, multiBootInfo->framebufferHeight, multiBootInfo->framebufferBpp);
+    }
 
     heapInit();
     kprintf("Successfully initialized heap\n");

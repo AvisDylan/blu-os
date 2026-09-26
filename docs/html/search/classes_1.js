@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gdt_0',['GDT',['../structGDT.html',1,'']]]
+  ['framebuffer_0',['Framebuffer',['../structFramebuffer.html',1,'']]]
 ];

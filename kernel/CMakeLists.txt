@@ -5,14 +5,22 @@ enable_language(ASM)
 
 set(KERNEL_COMMON_SOURCES
         src/drivers/vga.c
+        src/drivers/framebuffer.c
         src/kernel/kernel.c
         src/kernel/tty/tty.c
+        src/kernel/tty/font8x16.c
+        src/kernel/tty/framebufferbackend.c
+        src/kernel/tty/vgabackend.c
+
         src/kernel/libk/stdio/kprintf.c
         src/kernel/libk/panic.c
         src/kernel/libk/stdio/kputchar.c
         src/kernel/libk/string/strlen.c
         src/kernel/libk/stdlib/kfree.c
         src/kernel/libk/stdlib/kmalloc.c
+        src/kernel/libk/string/memset.c 
+        src/kernel/libk/string/memmove.c 
+
         src/kernel/mm/heap.c
         src/kernel/mm/slab.c
         src/kernel/thread/thread.c

@@ -1,0 +1,8 @@
+<map id="kernel/include/kernel/tty/ttybackend.h" name="kernel/include/kernel/tty/ttybackend.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,146,48"/>
+<area shape="rect" id="Node000002" href="$stddef_8h.html" title="Common definitions for C programs." alt="" coords="5,96,74,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,51,54,83,49,81,67,46"/>
+<area shape="rect" id="Node000003" href="$stdint_8h.html" title="Fixed&#45;width integer types." alt="" coords="43,171,108,197"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="81,46,88,83,89,123,84,157,79,154,84,122,83,83,79,51"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="47,121,65,156,60,157,44,126"/>
+</map>

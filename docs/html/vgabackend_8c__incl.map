@@ -1,0 +1,24 @@
+<map id="kernel/src/kernel/tty/vgabackend.c" name="kernel/src/kernel/tty/vgabackend.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="44,5,181,48"/>
+<area shape="rect" id="Node000002" href="$vga_8h_source.html" title=" " alt="" coords="20,171,117,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,46,79,156,73,155,106,51"/>
+<area shape="rect" id="Node000004" href="$stdint_8h.html" title="Fixed&#45;width integer types." alt="" coords="116,320,181,347"/>
+<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="84,51,58,78,29,113,11,154,8,175,11,197,27,237,56,270,82,292,111,312,106,313,79,297,52,274,22,240,6,198,3,175,6,153,25,111,54,74,86,46"/>
+<area shape="rect" id="Node000005" href="$tty_8h_source.html" title=" " alt="" coords="140,171,245,197"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="124,46,182,156,176,157,122,51"/>
+<area shape="rect" id="Node000007" href="$vgabackend_8h.html" title=" " alt="" coords="247,96,407,123"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="167,46,281,89,277,91,168,51"/>
+<area shape="rect" id="Node000003" href="$stddef_8h.html" title="Common definitions for C programs." alt="" coords="78,245,147,272"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,195,99,232,94,232,75,200"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="65,195,61,233,62,252,68,271,85,293,109,312,103,312,81,297,63,273,57,253,56,232,63,200"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="120,270,138,306,133,306,117,275"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="180,196,139,237,135,233,176,200"/>
+<area shape="poly" id="edge9_Node000005_Node000004" title=" " alt="" coords="191,197,159,306,154,304,186,199"/>
+<area shape="rect" id="Node000006" href="$multiboot_8h_source.html" title=" " alt="" coords="222,245,390,272"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="213,195,276,236,270,237,212,201"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="281,272,191,316,189,311,276,273"/>
+<area shape="rect" id="Node000008" href="$ttybackend_8h.html" title=" " alt="" coords="269,171,423,197"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="331,121,341,156,336,155,329,126"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="303,200,162,245,160,240,307,196"/>
+<area shape="poly" id="edge13_Node000008_Node000004" title=" " alt="" coords="365,195,384,211,401,231,410,252,409,263,404,274,390,285,369,296,315,312,253,323,196,330,196,325,252,318,313,307,367,291,387,281,400,270,404,262,405,253,397,234,381,215,363,201"/>
+</map>

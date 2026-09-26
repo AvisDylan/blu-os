@@ -1,0 +1,73 @@
+\doxysection{kernel/\+src/\+kernel/\+tty/\+framebufferbackend.c File Reference}
+\hypertarget{framebufferbackend_8c}{}\label{framebufferbackend_8c}\index{kernel/src/kernel/tty/framebufferbackend.c@{kernel/src/kernel/tty/framebufferbackend.c}}
+{\ttfamily \+\#include $<$drivers/\+vga.\+h$>$}\newline
+{\ttfamily \+\#include $<$kernel/\+tty/\+tty.\+h$>$}\newline
+{\ttfamily \+\#include $<$kernel/\+tty/\+vgabackend.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include "{}drivers/\+framebuffer.\+h"{}}\newline
+{\ttfamily \+\#include "{}kernel/\+tty/\+font8x16.\+h"{}}\newline
+Include dependency graph for framebufferbackend.\+c:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{framebufferbackend_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{framebufferbackend_8c_acb8017adb92bbccc487b428cf61ab004}\label{framebufferbackend_8c_acb8017adb92bbccc487b428cf61ab004} 
+\+\#define {\bfseries GLYPH\+\_\+\+WIDTH}~8
+\item 
+\Hypertarget{framebufferbackend_8c_a7d0a7ac24105d9c91bce2b5a1e9a1ad3}\label{framebufferbackend_8c_a7d0a7ac24105d9c91bce2b5a1e9a1ad3} 
+\+\#define {\bfseries GLYPH\+\_\+\+HEIGHT}~16
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{framebufferbackend_8c_aaaabcfc2e032be2fce7a6b7f829feb55}\label{framebufferbackend_8c_aaaabcfc2e032be2fce7a6b7f829feb55} 
+static void {\bfseries framebuffer\+Put\+Entry\+At} (size\+\_\+t column, size\+\_\+t row, char c, uint8\+\_\+t color)
+\item 
+\Hypertarget{framebufferbackend_8c_ab41a39ce6e7764ca5d87e0e7af622a3f}\label{framebufferbackend_8c_ab41a39ce6e7764ca5d87e0e7af622a3f} 
+static void {\bfseries framebuffer\+Scroll1} (uint8\+\_\+t color)
+\item 
+\Hypertarget{framebufferbackend_8c_a8d9ed8cd33f37d98b068a5cd9ba15256}\label{framebufferbackend_8c_a8d9ed8cd33f37d98b068a5cd9ba15256} 
+static void {\bfseries framebuffer\+Clear1} (uint8\+\_\+t color)
+\item 
+\Hypertarget{framebufferbackend_8c_a43bbc686cb21885c246189e74ff08c02}\label{framebufferbackend_8c_a43bbc686cb21885c246189e74ff08c02} 
+void {\bfseries framebuffer\+Backend\+Get} (\doxymbox{\hyperlink{structFramebuffer}{Framebuffer}} \texorpdfstring{$\ast$}{*}fb, \doxymbox{\hyperlink{structTerminalBackend}{Terminal\+Backend}} \texorpdfstring{$\ast$}{*}terminal)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \doxymbox{\hyperlink{framebufferbackend_8c_aa9b82371dbb5b9ba4978664a70db03bd}{vga\+Palette}} \+[16]\+
+\item 
+\Hypertarget{framebufferbackend_8c_abcd8b0e0ee3995d366a102953f42596a}\label{framebufferbackend_8c_abcd8b0e0ee3995d366a102953f42596a} 
+static \doxymbox{\hyperlink{structFramebuffer}{Framebuffer}} \texorpdfstring{$\ast$}{*} {\bfseries framebuffer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Avis
+\end{DoxyAuthor}
+\doxylink{structFramebuffer}{Framebuffer} backend for terminal 
+
+\label{doc-var-members}
+\Hypertarget{framebufferbackend_8c_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{framebufferbackend_8c_aa9b82371dbb5b9ba4978664a70db03bd}\index{framebufferbackend.c@{framebufferbackend.c}!vgaPalette@{vgaPalette}}
+\index{vgaPalette@{vgaPalette}!framebufferbackend.c@{framebufferbackend.c}}
+\doxysubsubsection{\texorpdfstring{vgaPalette}{vgaPalette}}
+{\footnotesize\ttfamily \label{framebufferbackend_8c_aa9b82371dbb5b9ba4978664a70db03bd} 
+const uint32\+\_\+t vga\+Palette\+[16]\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0x000000,\ 0x0000AA,\ 0x00AA00,\ 0x00AAAA,\ 0xAA0000,\ 0xAA00AA,\ 0xAA5500,\ 0xAAAAAA,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 0x555555,\ 0x5555FF,\ 0x55FF55,\ 0x55FFFF,\ 0xFF5555,\ 0xFF55FF,\ 0xFFFF55,\ 0xFFFFFF,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['slab_0',['slab',['../structslab.html',1,'']]]
+  ['kernelmemorycache_0',['KernelMemoryCache',['../structKernelMemoryCache.html',1,'']]],
+  ['kmallocheader_1',['KmallocHeader',['../structKmallocHeader.html',1,'']]]
 ];

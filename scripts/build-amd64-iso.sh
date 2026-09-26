@@ -23,6 +23,9 @@ cat << 'EOF' > "$ISO_DIR/boot/grub/grub.cfg"
 set timeout=0
 set default=0
 
+set gfxmode=1024x768x32
+set gfxpayload=keep
+
 menuentry "blu-OS" {
     multiboot /boot/blu_os.kernel64
     boot

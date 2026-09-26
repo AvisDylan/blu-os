@@ -1,0 +1,31 @@
+\doxysection{framebuffer.\+h}
+\hypertarget{framebuffer_8h_source}{}\label{framebuffer_8h_source}\index{kernel/include/drivers/framebuffer.h@{kernel/include/drivers/framebuffer.h}}
+\doxymbox{\hyperlink{framebuffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_FRAMEBUFFER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ BLU\_OS\_FRAMEBUFFER\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <arch/x86/boot/multiboot.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00016\ \ \ \ \ uint8\_t*\ address;}
+\DoxyCodeLine{00017\ \ \ \ \ uint32\_t\ pitch;}
+\DoxyCodeLine{00018\ \ \ \ \ uint32\_t\ width;}
+\DoxyCodeLine{00019\ \ \ \ \ uint32\_t\ height;}
+\DoxyCodeLine{00020\ \ \ \ \ uint8\_t\ bitsPerPixel;}
+\DoxyCodeLine{00021\ \}\ \doxymbox{\hyperlink{structFramebuffer}{Framebuffer}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ framebufferInit(MultibootInfo*\ multibootInfo,\ \doxymbox{\hyperlink{structFramebuffer}{Framebuffer}}*\ framebuffer);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ framebufferPutPixel(\doxymbox{\hyperlink{structFramebuffer}{Framebuffer}}*\ framebuffer,\ uint32\_t\ x,\ uint32\_t\ y,\ uint32\_t\ rgb);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ framebufferClear(\doxymbox{\hyperlink{structFramebuffer}{Framebuffer}}*\ framebuffer,\ uint32\_t\ rgb);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ framebufferScroll(\doxymbox{\hyperlink{structFramebuffer}{Framebuffer}}*\ framebuffer,\ uint32\_t\ rows);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

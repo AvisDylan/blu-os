@@ -6,8 +6,6 @@
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
 #include <arch/x86/i386/mmu/virtualmemorymanager.h>
 
-#include "stdio.h"
-
 uint32_t pageDirectory[1024] __attribute__((aligned(4096)));
 uint32_t kernelPageTable[1024] __attribute__((aligned(4096)));
 
@@ -24,6 +22,7 @@ void initVirtualMemoryManager() {
     uint32_t pdIndex = KERNEL_VMA >> 22;
     uint32_t kernelPageTablePhysical = (uint32_t) kernelPageTable - KERNEL_VMA;
     pageDirectory[pdIndex] = kernelPageTablePhysical | PAGE_PRESENT | PAGE_WRITE;
+    pageDirectory[0] = kernelPageTablePhysical | PAGE_PRESENT | PAGE_WRITE;
 
     uint32_t pageDirPhysical = (uint32_t) pageDirectory - KERNEL_VMA;
     pageDirectory[1023] = pageDirPhysical | PAGE_PRESENT | PAGE_WRITE;

@@ -15,6 +15,8 @@ typedef struct {
 #define MULTIBOOT_INFO_MEM_MAP (1 << 6)
 #define MULTIBOOT_MEMORY_AVAILABLE 1
 #define MULTI_BOOT_MAGIC 0x2BADB002
+#define MULTIBOOT_INFO_VBE 0x00000800
+#define MULTIBOOT_INFO_FRAMEBUFFER 0x00001000
 
 typedef struct {
     uint32_t flags;

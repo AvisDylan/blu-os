@@ -1,0 +1,42 @@
+\doxysection{kernel/\+src/\+kernel/\+tty/\+vgabackend.c File Reference}
+\hypertarget{vgabackend_8c}{}\label{vgabackend_8c}\index{kernel/src/kernel/tty/vgabackend.c@{kernel/src/kernel/tty/vgabackend.c}}
+{\ttfamily \+\#include $<$drivers/\+vga.\+h$>$}\newline
+{\ttfamily \+\#include $<$kernel/\+tty/\+tty.\+h$>$}\newline
+{\ttfamily \+\#include $<$kernel/\+tty/\+vgabackend.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+Include dependency graph for vgabackend.\+c:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vgabackend_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{vgabackend_8c_a8b92f3272d29a2c3836e0af4e0707b58}\label{vgabackend_8c_a8b92f3272d29a2c3836e0af4e0707b58} 
+static void {\bfseries vga\+Put\+Entry\+At} (size\+\_\+t column, size\+\_\+t row, char c, uint8\+\_\+t color)
+\item 
+\Hypertarget{vgabackend_8c_a5149eeac8b03ce6a463bf518ae2766f7}\label{vgabackend_8c_a5149eeac8b03ce6a463bf518ae2766f7} 
+static void {\bfseries vga\+Scroll} (uint8\+\_\+t color)
+\item 
+\Hypertarget{vgabackend_8c_a89598443353fdd9f10370b9e32f64a63}\label{vgabackend_8c_a89598443353fdd9f10370b9e32f64a63} 
+static void {\bfseries vga\+Clear} (uint8\+\_\+t color)
+\item 
+\Hypertarget{vgabackend_8c_abfcf8360195fe783b0c2ea6b7ca15b8a}\label{vgabackend_8c_abfcf8360195fe783b0c2ea6b7ca15b8a} 
+void {\bfseries vga\+Backend\+Get} (\doxymbox{\hyperlink{structTerminalBackend}{Terminal\+Backend}} \texorpdfstring{$\ast$}{*}terminal)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{vgabackend_8c_a8f2a33bf29a1f80be48aa284ae6e01f5}\label{vgabackend_8c_a8f2a33bf29a1f80be48aa284ae6e01f5} 
+static uint16\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries vga\+Buffer} = (uint16\+\_\+t\texorpdfstring{$\ast$}{*}) VGA\+\_\+\+MEMORY
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Avis
+\end{DoxyAuthor}
+VGA backend for terminal 

@@ -46,7 +46,7 @@
 - [ ] Add libc++
 - [ ] Add BIOS VBE
 - [ ] Add UEFI
-- [ ] Add UEFI Video
+- [ ] Add UEFI GOP 
 - [ ] Add KMS
 - [ ] Add desktop enviroment
 - [ ] Add apps

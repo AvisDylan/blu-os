@@ -1,0 +1,47 @@
+\doxysection{kernel/\+include/\+drivers/\+framebuffer.h File Reference}
+\hypertarget{framebuffer_8h}{}\label{framebuffer_8h}\index{kernel/include/drivers/framebuffer.h@{kernel/include/drivers/framebuffer.h}}
+{\ttfamily \+\#include $<$arch/\+x86/\+boot/\+multiboot.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+Include dependency graph for framebuffer.\+h:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{framebuffer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{framebuffer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structFramebuffer}{Framebuffer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{framebuffer_8h_a92e8fa9dc9582952202075da8a9119cd}\label{framebuffer_8h_a92e8fa9dc9582952202075da8a9119cd} 
+void {\bfseries framebuffer\+Init} (Multiboot\+Info \texorpdfstring{$\ast$}{*}multiboot\+Info, \doxymbox{\hyperlink{structFramebuffer}{Framebuffer}} \texorpdfstring{$\ast$}{*}framebuffer)
+\item 
+\Hypertarget{framebuffer_8h_a9af262b6596677189135d1c21ec63f12}\label{framebuffer_8h_a9af262b6596677189135d1c21ec63f12} 
+void {\bfseries framebuffer\+Put\+Pixel} (\doxymbox{\hyperlink{structFramebuffer}{Framebuffer}} \texorpdfstring{$\ast$}{*}framebuffer, uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t rgb)
+\item 
+\Hypertarget{framebuffer_8h_a036e1d91f2570d277e6b3c3a0a26167b}\label{framebuffer_8h_a036e1d91f2570d277e6b3c3a0a26167b} 
+void {\bfseries framebuffer\+Clear} (\doxymbox{\hyperlink{structFramebuffer}{Framebuffer}} \texorpdfstring{$\ast$}{*}framebuffer, uint32\+\_\+t rgb)
+\item 
+\Hypertarget{framebuffer_8h_ab4731261f9567f27d24bbc992e367e7b}\label{framebuffer_8h_ab4731261f9567f27d24bbc992e367e7b} 
+void {\bfseries framebuffer\+Scroll} (\doxymbox{\hyperlink{structFramebuffer}{Framebuffer}} \texorpdfstring{$\ast$}{*}framebuffer, uint32\+\_\+t rows)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Avis
+\end{DoxyAuthor}
+BIOS VBE framebuffer driver 
