@@ -44,7 +44,7 @@
 - [ ] Add package manager
 - [ ] Port gcc/clang, python, java
 - [ ] Add libc++
-- [ ] Add BIOS VBE
+- [x] Add BIOS VBE
 - [ ] Add UEFI
 - [ ] Add UEFI GOP 
 - [ ] Add KMS
