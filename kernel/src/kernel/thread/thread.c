@@ -1,7 +1,7 @@
 #include <kernel/libk/stdlib.h>
 #include <kernel/thread/thread.h>
 
-#include "arch/kal.h"
+#include <arch/kal.h>
 
 static tid_t nextTid = 1;
 
@@ -10,6 +10,7 @@ static tid_t nextTid = 1;
  *
  * @param entry Function pointer to thread entry point.
  * @param stackSize Size of stack for thread in bytes.
+ *
  * @return Pointer to created thread or NULL on failure.
  */
 Thread* createThread(thread_entry_t entry, size_t stackSize) {

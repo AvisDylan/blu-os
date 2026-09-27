@@ -25,6 +25,7 @@
 - [ ] Add local APIC
 - [ ] Write driver for IOAPIC
 - [x] Add timers
+- [-] Add processes
 - [ ] Add multiprocessing
 - [ ] Add elf loader
 - [ ] Add syscalls
