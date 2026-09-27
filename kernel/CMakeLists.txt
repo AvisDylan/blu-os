@@ -6,6 +6,7 @@ enable_language(ASM)
 set(KERNEL_COMMON_SOURCES
         src/drivers/vga.c
         src/drivers/framebuffer.c
+        src/drivers/keyboard.c
         src/kernel/kernel.c
         src/kernel/tty/tty.c
         src/kernel/tty/font8x16.c

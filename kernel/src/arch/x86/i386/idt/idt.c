@@ -4,8 +4,9 @@
 
 #include <arch/x86/i386/idt/idt.h>
 #include <arch/x86/i386/pic/pic.h>
+#include <arch/x86/i386/pit/pit.h>
+#include <drivers/keyboard.h>
 #include <kernel/libk/panic.h>
-#include "arch/x86/i386/pit/pit.h"
 
 __attribute__((aligned(0x10))) static IDTEntry idt[IDT_MAX_DESCRIPTORS];
 static IDTR idtr;
@@ -25,6 +26,7 @@ void irqHandler(uint32_t vector, uint32_t errorCode) {
             break;
         case 1:
             // keybaord
+            keyboardHandler();
             break;
     }
 

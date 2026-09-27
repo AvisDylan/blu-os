@@ -3,6 +3,7 @@
 #include <arch/kal.h>
 #include <arch/x86/boot/multiboot.h>
 #include <arch/x86/i386/mmu/physicalmemorymanager.h>
+#include <drivers/keyboard.h>
 #include <kernel/libk/stdio.h>
 #include <kernel/libk/stdlib.h>
 #include <kernel/mm/heap.h>
@@ -11,21 +12,21 @@
 #include <kernel/tty/tty.h>
 #include <stdint.h>
 
-int thread1() {
-    kprintf("Thread 1a\n");
-    schedulerYield();
-    kprintf("Thread 1b\n");
-
-    return 0;
-}
-
-int thread2() {
-    kprintf("Thread 2a\n");
-    schedulerYield();
-    kprintf("Thread 2b\n");
-
-    return 0;
-}
+// int thread1() {
+//     kprintf("Thread 1a\n");
+//     schedulerYield();
+//     kprintf("Thread 1b\n");
+//
+//     return 0;
+// }
+//
+// int thread2() {
+//     kprintf("Thread 2a\n");
+//     schedulerYield();
+//     kprintf("Thread 2b\n");
+//
+//     return 0;
+// }
 
 void kernelMain(uint32_t magic, uint32_t mbiAddress) {
     if (magic != MULTI_BOOT_MAGIC) {
@@ -83,6 +84,21 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
 
     kalInitVirtualMemoryManager();
 
+    heapInit();
+
+    schedulerInit();
+
+    // Thread* t1 = createThread(thread1, 4096);
+    // Thread* t2 = createThread(thread2, 4096);
+
+    // schedulerAddThread(t1);
+
+    // schedulerAddThread(t2);
+
+    // schedulerYield();
+
+    // kprintf("Back to kernel main\n");
+
     terminalInit(multiBootInfo);
 
     if (multiBootInfo->flags & MULTIBOOT_INFO_FRAMEBUFFER) {
@@ -90,35 +106,20 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
                 multiBootInfo->framebufferWidth, multiBootInfo->framebufferHeight, multiBootInfo->framebufferBpp);
     }
 
-    heapInit();
-    kprintf("Successfully initialized heap\n");
-
-    schedulerInit();
-    kprintf("Successfully initialized scheduler\n");
-
-    Thread* t1 = createThread(thread1, 4096);
-    Thread* t2 = createThread(thread2, 4096);
-
-    schedulerAddThread(t1);
-
-    schedulerAddThread(t2);
-
-    schedulerYield();
-
-    kprintf("Back to kernel main\n");
+    keyboardInit();
 
     kprintf("Hello, World!\n");
 
-    uint64_t lastPrint = -1;
+    // uint64_t lastPrint = -1;
 
     for (;;) {
-        uint64_t currentTimeSecond = timerWallClockUnixMs() / 1000;
+        // uint64_t currentTimeSecond = timerWallClockUnixMs() / 1000;
 
-        if (currentTimeSecond != lastPrint) {
-            kprintf("Time: %us\n", currentTimeSecond);
-            lastPrint = currentTimeSecond;
-        }
+        // if (currentTimeSecond != lastPrint) {
+        //     kprintf("Time: %us\n", currentTimeSecond);
+        //     lastPrint = currentTimeSecond;
+        // }
 
-        asm volatile("hlt");
+        // asm volatile("hlt");
     }
 }

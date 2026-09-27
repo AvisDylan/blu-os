@@ -37,7 +37,7 @@
 - [ ] Add signals
 - [ ] Add wait + blocking io
 - [ ] Add pci enumeration
-- [ ] Get drivers keyboard & mouse, timers, pci
+- [-] Get drivers keyboard & mouse, timers, pci
 - [ ] Add vfs & file permissions
 - [ ] Add userland
 - [ ] Add a shell
