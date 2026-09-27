@@ -3,15 +3,16 @@
 //
 
 #include <arch/x86/i386/gdt/gdt.h>
+#include <arch/x86/i386/tss/tss.h>
 #include <kernel/libk/stdio.h>
 #include <stdint.h>
 #include <stdio.h>
 
-static uint8_t gdt[5][8];
+static uint8_t gdt[6][8];
 
 void encodeGdtEntry(uint8_t* target, GDT source) {
     if (source.limit > 0xfffff) {
-        kprintf("GDT cannot encode limits larger than 0xffffF\n");
+        kprintf("GDT cannot encode limits larger than 0xfffff\n");
         return;
     }
 
@@ -72,7 +73,15 @@ void initGdt() {
 
     encodeGdtEntry(gdt[4], entry);
 
-    uint16_t limit = (sizeof(uint8_t) * 5 * 8) - 1;
+    // tss
+    entry.base = (uint32_t) &tss;
+    entry.limit = sizeof(Tss) - 1;
+    entry.accesBytes = 0x89;
+    entry.flags = 0x0;
+
+    encodeGdtEntry(gdt[5], entry);
+
+    uint16_t limit = (sizeof(uint8_t) * 6 * 8) - 1;
     uint32_t base = (uint32_t) &gdt;
 
     setGdt(limit, base);

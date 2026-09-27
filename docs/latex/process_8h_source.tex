@@ -1,0 +1,23 @@
+\doxysection{process.\+h}
+\hypertarget{process_8h_source}{}\label{process_8h_source}\index{kernel/include/kernel/process/process.h@{kernel/include/kernel/process/process.h}}
+\doxymbox{\hyperlink{process_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_PROCESS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ BLU\_OS\_PROCESS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <kernel/thread/thread.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00017\ \ \ \ \ pid\_t\ pid;}
+\DoxyCodeLine{00018\ \ \ \ \ uint32\_t\ pageDirectory;}
+\DoxyCodeLine{00019\ \ \ \ \ uintptr\_t\ userStackTop;}
+\DoxyCodeLine{00020\ \ \ \ \ Thread*\ mainThread;}
+\DoxyCodeLine{00021\ \}\ \doxymbox{\hyperlink{structProcess}{Process}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

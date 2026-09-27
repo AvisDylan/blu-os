@@ -12,6 +12,7 @@
 #include <stdint.h>
 #include "arch/x86/i386/pit/pit.h"
 #include "arch/x86/i386/rtc/rtc.h"
+#include "arch/x86/i386/tss/tss.h"
 
 static uint64_t bootUnixTime = 0;
 
@@ -38,6 +39,9 @@ void kalThreadSetupStack(Thread* t) {
     t->stackPointer = (void*) stackPointer;
 }
 
+void kalInitTss(void) { tssInit(); }
+
+void kalLoadTss(uint16_t selector) { loadTss(selector); }
 
 void kalInitTimer(uint32_t freqHz) {
     bootUnixTime = rtcReadUnixTime();

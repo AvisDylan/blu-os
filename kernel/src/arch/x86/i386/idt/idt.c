@@ -12,6 +12,8 @@ __attribute__((aligned(0x10))) static IDTEntry idt[IDT_MAX_DESCRIPTORS];
 static IDTR idtr;
 static uint64_t ticks = 0;
 
+extern void syscallHandler(void);
+
 void exceptionHandler(uint32_t vector, uint32_t errorCode) { panic("Kernel panic"); }
 
 void irqHandler(uint32_t vector, uint32_t errorCode) {
@@ -56,6 +58,9 @@ void initIdt() {
     for (uint8_t irq = 0; irq < 16; irq++) {
         idtSetDescriptor(32 + irq, irqStubTable[irq], 0x8e);
     }
+
+    // syscall
+    idtSetDescriptor(0x80, syscallHandler, 0x8f);
 
     remapPic(0x20, 0x28);
 

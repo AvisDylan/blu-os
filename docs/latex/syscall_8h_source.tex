@@ -1,0 +1,21 @@
+\doxysection{syscall.\+h}
+\hypertarget{syscall_8h_source}{}\label{syscall_8h_source}\index{kernel/include/arch/x86/i386/syscall/syscall.h@{kernel/include/arch/x86/i386/syscall/syscall.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BLU\_OS\_SYSCALL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BLU\_OS\_SYSCALL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ syscall\ numbers\ https://www.chromium.org/chromium-\/os/developer-\/library/reference/linux-\/constants/syscalls/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00009\ \ \ \ \ uint32\_t\ edi,\ esi,\ ebp,\ esp,\ ebx,\ edx,\ ecx,\ eax;}
+\DoxyCodeLine{00010\ \}\ \doxymbox{\hyperlink{structSyscallFrame}{SyscallFrame}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ syscallHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ syscallDispatch(\doxymbox{\hyperlink{structSyscallFrame}{SyscallFrame}}*\ syscallFrame);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

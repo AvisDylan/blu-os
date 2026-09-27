@@ -39,6 +39,10 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
 
     kalInitGdt();
 
+    kalInitTss();
+
+    kalLoadTss(0x28);
+
     kalInitIdt();
 
     kalInitTimer(1000);
@@ -107,6 +111,13 @@ void kernelMain(uint32_t magic, uint32_t mbiAddress) {
     }
 
     keyboardInit();
+
+    asm volatile("mov $60, %%eax\n" // sys_exit
+                 "mov $0, %%ebx\n" // exit code 0
+                 "int $0x80"
+                 :
+                 :
+                 : "eax", "ebx", "memory");
 
     kprintf("Hello, World!\n");
 

@@ -28,7 +28,7 @@
 - [-] Add processes
 - [ ] Add multiprocessing
 - [ ] Add elf loader
-- [ ] Add syscalls
+- [x] Add syscalls
 - [-] Add libc [TODO](./libc/TODO.md)
 - [ ] Add unit tests for libc and kernel
 - [ ] Add kernel permissions

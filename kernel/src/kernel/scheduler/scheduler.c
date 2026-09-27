@@ -7,6 +7,8 @@
 #include "kernel/scheduler/scheduler.h"
 #include <kernel/thread/thread.h>
 #include <stddef.h>
+#include <stdint.h>
+#include "arch/x86/i386/tss/tss.h"
 
 static Thread* currentThread = NULL;
 static Thread* queueHead = NULL;
@@ -50,6 +52,7 @@ void schedulerYield(void) {
 
     currentThread = next;
 
+    tss.esp0 = (uint32_t) next->kernelStack + next->stackSize;
     threadSwitch(prev, next);
 }
 

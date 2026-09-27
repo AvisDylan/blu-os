@@ -24,6 +24,10 @@ void kalThreadSetupStack(Thread* t);
 
 void kalInitTimer(uint32_t freqHz);
 
+void kalInitTss(void);
+
+void kalLoadTss(uint16_t selector);
+
 uint64_t timerWallClockUnixMs(void);
 
 #endif // BLU_OS_HAL_H

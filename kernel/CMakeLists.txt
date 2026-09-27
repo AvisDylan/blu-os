@@ -44,6 +44,9 @@ set(KERNEL_I386_SOURCES
         src/arch/x86/i386/thread/threadswitch.s
         src/arch/x86/i386/pit/pit.c
         src/arch/x86/i386/rtc/rtc.c
+        src/arch/x86/i386/syscall/syscall.c
+        src/arch/x86/i386/syscall/syscallstubs.s
+        src/arch/x86/i386/tss/tss.c
 )
 
 set(KERNEL_AMD64_SOURCES
