@@ -70,11 +70,11 @@ void schedulerYield(void) {
 
     Thread* next = prev->next;
 
-    while ((next->state == THREAD_EXITED || next->state == THREAD_SLEEPING) && next != prev) {
+    while (next->state == THREAD_EXITED && next != prev) {
         next = next->next;
     }
 
-    if (next == prev || next->state != THREAD_RUNNABLE)
+    if (next == prev)
         return;
 
     currentThread = next;

@@ -60,7 +60,7 @@ void initIdt() {
     }
 
     // syscall
-    idtSetDescriptor(0x80, syscallHandler, 0x8f);
+    idtSetDescriptor(0x80, syscallHandler, 0x8e);
 
     remapPic(0x20, 0x28);
 

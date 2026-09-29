@@ -25,6 +25,7 @@
 - [ ] Add local APIC
 - [ ] Write driver for IOAPIC
 - [x] Add timers
+- [ ] Switch to user ring 3 
 - [-] Add processes
 - [ ] Add multiprocessing
 - [ ] Add elf loader

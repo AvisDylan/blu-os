@@ -11,6 +11,7 @@
 
 void schedulerInit(void);
 void schedulerAddThread(Thread* thread);
+void schedulerRemoveThread(Thread* thread);
 void schedulerYield(void);
 void schedulerExitCurrent(void);
 void threadTrampoline(void);
